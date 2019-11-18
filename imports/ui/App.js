@@ -14,7 +14,11 @@ export default class App extends Component {
 
 componentDidMount() {
   this.getTimeUntil(this.state.deadline);
-  setInterval(() => this.getTimeUntil(this.state.deadline), 1000);
+  this.timerId = setInterval(() => this.getTimeUntil(this.state.deadline), 1000);
+}
+
+componentWillUnmount() {
+  clearInterval(this.timerId);
 }
 
 leading0(num) {
