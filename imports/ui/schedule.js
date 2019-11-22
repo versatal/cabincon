@@ -14,12 +14,6 @@ background-color: #2196F3;
 padding: 10px;
 `;
 
-const EmptyRow = styled.div`
-grid-column: 1 / span ${props => props.cols};
-grid-row: ${props => props.begin} / ${props => props.end};
-background-color: red;
-`;
-
 class Schedule extends Component {
 
   handleSubmit(event) {
@@ -59,10 +53,11 @@ class Schedule extends Component {
   }
 
   submitSlot(num) {
+    let numLine = "Add " + num + " Slot"; 
     return (
       <form className="slotAdd" onSubmit={this.addSlot.bind(this)}>
                 <input type="hidden" ref="slotDay" value={num}></input>
-                <input type="submit" value="Add Slot"></input>
+                <input type="submit" value={numLine}></input>
       </form>
     )
   }
@@ -70,54 +65,35 @@ class Schedule extends Component {
   render() {
     const { currentUser, thursdayCount, fridayCount, saturdayCount, sundayCount } = this.props;
 
-    let fridayBumper = thursdayCount + 2;
-    let saturdayBumper = thursdayCount + fridayCount + 2;
-    let sundayBumper = thursdayCount + fridayCount + saturdayCount + 2;
-
-    let fridayEnd = fridayCount + fridayBumper;
-    let saturdayEnd =  saturdayCount + saturdayBumper;
-    let sundayEnd =  sundayCount + sundayBumper;
-
-    let columns = 5;
-
-    if (thursdayCount < 1) {
-      fridayBumper++;
-      saturdayBumper++;
-      sundayBumper++;
-    }
-    if (fridayCount < 1) {
-      saturdayBumper++;
-      sundayBumper++;
-    }
-    if (saturdayCount < 1) {
-      sundayBumper++;
-    }
-
     return (
       <div className="container">
-        <header>
-
-        </header>
+        {
+          currentUser ?
+            currentUser.isAdmin &&
+            <header>
+              <span>Add slots</span>
+              <form className="slotAdd" onSubmit={this.addSlot.bind(this)}>
+                <select name="weekDays" ref="slotDay">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <input type="submit" value="submit"></input>
+              </form>
+            </header>
+          : <span>Loading...</span>
+        }
 
         <GridLayout>
           {this.renderHeadings()}
-          {thursdayCount > 0 ? this.renderGames(1, 2, thursdayCount + 2) :
-            <EmptyRow begin={2} end={3} cols={columns}>Thursday
-            {currentUser ? currentUser.isAdmin && this.submitSlot(1) : <span>Loading...</span>}             
-            </EmptyRow>}
-          {fridayCount > 0 ? this.renderGames(2, fridayBumper, fridayEnd) :
-            <EmptyRow begin={fridayBumper} end={fridayBumper + 1} cols={columns}>Friday
-            {currentUser ? currentUser.isAdmin && this.submitSlot(2) : <span>Loading...</span>}             
-            </EmptyRow>}
-          {saturdayCount > 0 ? this.renderGames(3, saturdayBumper, saturdayEnd) :
-            <EmptyRow begin={saturdayBumper} end={saturdayBumper + 1} cols={columns}>Saturday
-            {currentUser ? currentUser.isAdmin && this.submitSlot(3) : <span>Loading...</span>}             
-            </EmptyRow>}
-          {sundayCount > 0 ? this.renderGames(4, sundayBumper, sundayEnd) :
-            <EmptyRow begin={sundayBumper} end={sundayBumper + 1} cols={columns}>Sunday
-            {currentUser ? currentUser.isAdmin && this.submitSlot(4) : <span>Loading...</span>}             
-            </EmptyRow>}
-         </GridLayout>
+          <React.Fragment>
+            {this.renderGames(1, 2, thursdayCount + 2)}
+            {this.renderGames(2, thursdayCount + 2, thursdayCount + 2 + fridayCount)}
+            {this.renderGames(3, thursdayCount + 2 + fridayCount, thursdayCount + 2 + fridayCount + saturdayCount)}
+            {this.renderGames(4, thursdayCount + 2 + fridayCount + saturdayCount, thursdayCount + 2 + fridayCount + fridayCount + saturdayCount + sundayCount)}
+          </React.Fragment>
+        </GridLayout>
       </div>
     );
   }
