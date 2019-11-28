@@ -31,7 +31,7 @@ Meteor.methods({
  
     Games.insert({
       title: text,
-      description: "New Game Description",
+      description: "Game Description",
       createdAt: new Date(),
       day,
       open: true,
@@ -65,7 +65,7 @@ Meteor.methods({
     check(gameId, String);
  
     Games.update(gameId, { 
-                 $set: { title: "New game", description: "New Game Description", open: true, gameMaster: '', players: [] }
+                 $set: { title: "New game", description: "Game Description", open: true, gameMaster: '', players: [] }
     });
   },
   'games.addPlayer'(gameId, player) {

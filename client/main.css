@@ -18,10 +18,16 @@ body {
 }
  
 .container {
-  max-width: 800px;
+  max-width: 80%;
   margin: 0 auto;
   min-height: 100%;
   background: white;
+}
+
+.gameDayHeader {
+  font-size: 32px;
+  margin: auto 0;
+  text-align: center;
 }
  
 header {
@@ -37,22 +43,6 @@ h1 {
   margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
-}
-
-
-.slot-container {
-  display:grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
-}
-
-.gameDayTwoRow {
-  grid-row: 1 / 3;
-}
-.gameDayThreeRow {
-  grid-row: 1 / 4;
-}
-.gameDayFourRow {
-  grid-row: 1 / 5;
 }
 
 .slotAdd {
@@ -91,6 +81,15 @@ form {
   margin-bottom: -10px;
   position: relative;
 }
+
+.signInMessage {
+  text-align: center;
+  height: 500px;
+}
+
+.signInMessage h1 {
+  margin: 225px;
+}
  
 .new-game input {
   box-sizing: border-box;
@@ -115,45 +114,80 @@ ul {
 .delete {
   font-weight: bold;
   background: none;
-  font-size: 1em;
-  border: 1px solid black;
-  position: relative;
+  font-size: 20px;
+  border: none;
+  background-color: darkred;
+  text-decoration: none;
+  color: white;
+  padding: 0;
+  margin-right: 5px;
 }
 
 .join {
-  border: 1px solid black;
+  font-weight: bold;
+  background: none;
+  font-size: 20px;
+  border: none;
+  background-color: darkred;
+  text-decoration: none;
+  color: white;
+  padding: 0 3px;
+  margin-right: 5px;
 }
 
 .leave {
-  border: 1px solid black;
+  font-weight: bold;
+  background: none;
+  font-size: 20px;
+  border: none;
+  background-color: darkred;
+  text-decoration: none;
+  color: white;
+  padding: 0 3px;
+  margin-right: 5px;
+}
+
+.colHeaders {
+  text-align: center;
+  font-size: 2em;
 }
 
 .gameLink {
-  border: 1px solid black;
+  font-size: 20px;
+  padding: 0;
+  text-decoration: none;
 }
 
 .gameMaster {
-  border: 1px solid black;
-}
-
-.btnClaim {
-  border: 1px solid black;
-}
-
-.gameTitle {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.shortDescription {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.gameDM {
-  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  padding: 0;
+  margin-right: 5px;
 }
 
 .gamePlayers {
+  font-size: 20px;
+  padding: 0;
+  margin-right: 5px;
+}
+
+.btnClaim {
+  font-weight: bold;
+  background: none;
+  font-size: 20px;
+  border: none;
+  background-color: darkred;
+  text-decoration: none;
+  color: white;
+  padding: 0 3px;
+  margin-right: 5px;
+}
+
+.gameItem {
+  box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.8);
+  height: 32px;
+  border: 1px solid black;
+  padding: 5px;
 }
 
 li {

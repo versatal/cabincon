@@ -16,9 +16,9 @@ class GameDetails extends Component {
     const { game, currentUser } = this.props;
     if (game) {
       return (
-        <div>
-          <div>
-            <h1>Game Details <span>edit</span></h1>
+        <div className="container">
+          <div className="gameDetails">
+            <h1>Game Details</h1>
             <h3>Game Title: {game.title}</h3>
             <h3>Game Master: {game.gameMaster}</h3>
             <h3>Day Scheduled: {game.day}</h3>
@@ -38,7 +38,7 @@ class GameDetails extends Component {
       )  
     } else {
       return (
-        <div>Loading...</div>
+        <div className="container">Loading...</div>
       )
     };
   }
