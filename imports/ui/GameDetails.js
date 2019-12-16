@@ -105,7 +105,6 @@ class GameDetails extends Component {
                 <div className="gameBlockLeft"><span className="gameLabel">Game System:</span></div>
                 <div className="gameBlockRight">
                   <select className="gameSystemInput" ref="gameSystem" disabled={this.state.disableSystem}>
-                    {game.gameSystem.length < 1 ? <option value="System Not Set" selected>None Selected</option> : <option value="System Not Set">None Selected</option> }
                     {game.gameSystem == "DnD 1e" ? <option value="DnD 1e" selected>DnD 1e</option> : <option value="DnD 1e">DnD 1e</option>}                  
                     {game.gameSystem == "DnD 2e" ? <option value="DnD 2e" selected>DnD 2e</option> : <option value="DnD 2e">DnD 2e</option>}                  
                     {game.gameSystem == "DnD 3e" ? <option value="DnD 3e" selected>DnD 3e</option> : <option value="DnD 3e">DnD 3e</option>}                  
