@@ -24,12 +24,90 @@ body {
   background: white;
 }
 
+.gameContainer {
+  max-width: 50%;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+  text-align: center;
+}
+
+.gameContainer h1 {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.gameBlock {
+  display: flex;
+  margin: 5px;
+}
+
+.gameBlockLeft {
+  width: 50%;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.gameBlockRight {
+  width: 50%;
+  text-align: left;
+
+}
+
+.longDescription {
+ width: 50%;
+ height: 200px;
+}
+
 .gameDayHeader {
   font-size: 32px;
   margin: auto 0;
   text-align: center;
 }
- 
+
+.gameLabel {
+font-weight: bold;
+font-size: 18px;
+}
+
+.gameData {
+  font-size: 18px;
+}
+  
+.gameInput {
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: lightgray;
+  font-size: 16px;
+}
+
+.gameInput:disabled {
+  border: none;
+  background-color: white;
+}
+
+.gameSystemInput {
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: lightgray;
+  font-size: 16px;
+  width: 41.5%;
+}
+
+.gameSystemInput:disabled {
+  border: none;
+  background-color: white;
+}
+
+.gameButton {
+
+}
+
+.gameSubmit {
+  margin: 5px;
+}
+
 header {
   background: #d2edf4;
   background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);

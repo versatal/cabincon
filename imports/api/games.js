@@ -37,6 +37,9 @@ Meteor.methods({
       open: true,
       gameMaster: '',
       players: [],
+      longDescription: '',
+      maxSeats: 4,
+      gameSystem: '',
     });
   },
   'games.remove'(gameId) {
@@ -52,13 +55,16 @@ Meteor.methods({
                  $set: { gameMaster: Meteor.users.findOne(this.userId).username } 
     });
   },
-  'games.setAll'(gameId, title, description) {
+  'games.setAll'(gameId, title, description, longDescription, maxSeats, gameSystem) {
     check(gameId, String);
     check(title, String);
     check(description, String);
- 
+    check(longDescription, String);
+    check(maxSeats, Number);
+    check(gameSystem, String);
+
     Games.update(gameId, { 
-                 $set: { title, description },
+                 $set: { title, description, longDescription, maxSeats, gameSystem },
     });
   },
   'games.unsetClaimed'(gameId) {

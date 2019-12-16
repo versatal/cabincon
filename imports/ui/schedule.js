@@ -8,13 +8,13 @@ import styled from 'styled-components';
 
 const GridLayout = styled.div`
 display:grid;
-grid-template-columns: 25% 25% 25% 25%;
+grid-template-columns: 20% 20% 20% 20% 20%;
 background-color: #2196F3;
 padding: 10px;
 `;
 
 const StyledDateHeader = styled.div`
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 5;
   background-color: #2196F3;
   height: 40px;
   text-align: center;
@@ -35,16 +35,6 @@ class Schedule extends Component {
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
   } 
 
-  renderHeadings() {
-    return <React.Fragment>
-      <div className="colHeaders">Game Title</div>
-      <div className="colHeaders">Game Description</div>
-      <div className="colHeaders">Game Master</div>
-      <div className="colHeaders">Players</div>
-    </React.Fragment>
-  }
-
-
   renderGames(day, begin, end) {
     let num = 0;
     return this.props.games.filter(game => game.day == day ).map(function(game) {
@@ -57,16 +47,6 @@ class Schedule extends Component {
     event.preventDefault();
     const day = parseInt(ReactDOM.findDOMNode(this.refs.slotDay).value.trim());    
     Meteor.call('games.insert', "New Game", day)
-  }
-
-  submitSlot(num) {
-    let numLine = "Add " + num + " Slot"; 
-    return (
-      <form className="slotAdd" onSubmit={this.addSlot.bind(this)}>
-                <input type="hidden" ref="slotDay" value={num}></input>
-                <input type="submit" value={numLine}></input>
-      </form>
-    )
   }
 
   render() {
@@ -83,10 +63,10 @@ class Schedule extends Component {
                 <span>Add slots</span>
                 <form className="slotAdd" onSubmit={this.addSlot.bind(this)}>
                   <select name="weekDays" ref="slotDay">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option value="1">Thursday</option>
+                    <option value="2">Friday</option>
+                    <option value="3">Saturday</option>
+                    <option value="4">Sunday</option>
                   </select>
                   <input type="submit" value="submit"></input>
                 </form>
@@ -95,17 +75,19 @@ class Schedule extends Component {
           }
   
           <GridLayout>
-            {this.renderHeadings()}
-            <React.Fragment>
-              <StyledDateHeader><p className="gameDayHeader">Thursday</p></StyledDateHeader>
-              {this.renderGames(1, 3, thursdayCount + 3)}
-              <StyledDateHeader><p className="gameDayHeader">Friday</p></StyledDateHeader>
-              {this.renderGames(2, thursdayCount + 4, thursdayCount + 4 + fridayCount)}
-              <StyledDateHeader><p className="gameDayHeader">Saturday</p></StyledDateHeader>
-              {this.renderGames(3, thursdayCount + 5 + fridayCount, thursdayCount + 5 + fridayCount + saturdayCount)}
-              <StyledDateHeader><p className="gameDayHeader">Sunday</p></StyledDateHeader>
-              {this.renderGames(4, thursdayCount + 6 + fridayCount + saturdayCount, thursdayCount + 6 + fridayCount + fridayCount + saturdayCount + sundayCount)}
-            </React.Fragment>
+            <div className="colHeaders">Game Title</div>
+            <div className="colHeaders">Game Description</div>
+            <div className="colHeaders">Game System</div>
+            <div className="colHeaders">Game Master</div>
+            <div className="colHeaders">Players</div>
+            <StyledDateHeader><p className="gameDayHeader">Thursday</p></StyledDateHeader>
+            {this.renderGames(1, 3, thursdayCount + 3)}
+            <StyledDateHeader><p className="gameDayHeader">Friday</p></StyledDateHeader>
+            {this.renderGames(2, thursdayCount + 4, thursdayCount + 4 + fridayCount)}
+            <StyledDateHeader><p className="gameDayHeader">Saturday</p></StyledDateHeader>
+            {this.renderGames(3, thursdayCount + 5 + fridayCount, thursdayCount + 5 + fridayCount + saturdayCount)}
+            <StyledDateHeader><p className="gameDayHeader">Sunday</p></StyledDateHeader>
+            {this.renderGames(4, thursdayCount + 6 + fridayCount + saturdayCount, thursdayCount + 6 + fridayCount + fridayCount + saturdayCount + sundayCount)}
           </GridLayout>
         </div>
       );
