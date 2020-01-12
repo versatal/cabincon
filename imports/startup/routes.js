@@ -9,7 +9,9 @@ import Admin from '../ui/admin.js';
 import Forum from '../ui/forum.js';
 import Schedule from '../ui/schedule.js';
 import GameDetails from '../ui/GameDetails.js';
+import SubTopic from '../ui/SubTopic.js';
 import NotFoundPage from '../ui/NotFoundPage.js';
+import Post from '../ui/Post.js';
 
 const browserHistory = createBrowserHistory();
 
@@ -24,6 +26,8 @@ export const Routes = () => (
         <Route exact path="/schedule" component={Schedule}/>
         <Route exact path="/admin" component={Admin}/>
         <Route exact path="/gamedetails:gameid" component={GameDetails}/>
+        <Route exact path="/post:postid" component={Post}/>
+        <Route exact path="/subtopic:subtopicid" component={SubTopic}/>
         <Route component={NotFoundPage}/>
       </Switch>
     </div>

@@ -12,8 +12,8 @@ export default class Navigation extends Component {
           <AccountsUIWrapper />
           <Link className="menu-item" to="/">Countdown</Link>      
           <Link className="menu-item" to="/schedule">Schedule</Link>      
-{/*       <Link className="menu-item" to="/blog">blog</Link>      
-          <Link className="menu-item" to="/forum">forum</Link>   */}   
+{/*       <Link className="menu-item" to="/blog">blog</Link>     */} 
+          <Link className="menu-item" to="/forum">forum</Link>      
           <Link className="menu-item" to="/admin">Secret Admin Stuff</Link>      
         </div>
       </div>
