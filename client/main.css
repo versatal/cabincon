@@ -328,8 +328,12 @@ header .hide-completed {
   font-size: 32px;
 }
 
-.forumTopicList {
+.forumTopic {
   font-size: 28px;
+}
+
+.forumTopicList {
+  padding-bottom: 10px;
 }
 
 .topicGroup {
@@ -389,10 +393,15 @@ header .hide-completed {
 
 .postTitle {
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .postBody {
   padding: 0px 10px;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
 }
 
 .replyBody {
@@ -412,6 +421,58 @@ header .hide-completed {
 
 .repliesList {
   padding: 0px 10px 10px 10px;
+}
+
+.replyGroup {
+  display: flex;
+}
+
+.replyPostBody {
+  padding: 0;
+}
+
+.postOwnerMenu {
+  padding-top: 10px;
+  margin: 0px 10px;
+}
+
+.markedArea {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.markedHeading {
+  text-align: center;
+}
+
+.markdInst {
+  width: 45%;
+  height: 210px;
+}
+
+.markdInst textarea {
+  width: 90%;
+  height: 200px;
+  border: none;
+}
+
+.postEdit {
+  padding: 10px;
+}
+.editTitle {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.editText {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.editLink {
+  margin-left: 15px;
 }
 
 @media (max-width: 600px) {

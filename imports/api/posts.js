@@ -38,4 +38,24 @@ Meteor.methods({
  
     Posts.remove(postId);
   },  
+
+  'posts.editTitleText'(postId, title, text) {
+    check(postId, String);
+    check(title, String);
+    check(text, String);
+
+    Posts.update(postId, { 
+                 $set: { title, text },
+    });
+  },
+
+  'posts.editTextOnly'(postId, text) {
+    check(postId, String);
+    check(text, String);
+
+    Posts.update(postId, { 
+                 $set: { text },
+    });
+  },
+
 });

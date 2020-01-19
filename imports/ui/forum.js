@@ -77,7 +77,7 @@ class Forum extends Component {
         <div className="forumHeader">
           <h1>Cabin Con Forum</h1>
         </div>
-        <div className="fourmTopicList">
+        <div className="forumTopicList">
           {this.renderTopics()}
         </div>
           {currentUser &&
@@ -85,18 +85,18 @@ class Forum extends Component {
             <div className="forumAdmin">
               <form className="topicAdd" onSubmit={this.handleSubmitTopic.bind(this)} >
                 <h4>New Topic</h4>
-                <input type="text" ref="topicTitle" />
+                <input className="postTitle" type="text" ref="topicTitle" />
                 <textarea className="postBody" ref="topicBody" />
                 <input type="submit" value="submit"></input>
               </form>
               <form className="subTopicAdd" onSubmit={this.handleSubmitSubTopic.bind(this)} >
                 <h4>New Sub Topic</h4>
-                <input type="text" ref="subTopicTitle" />
                 <select ref="subTopicOf">
                   {this.props.posts.filter(post => post.type == "topic" ).map(function(post) {
                     return <option key={post._id} value={post._id}>{post.title}</option>
                   })}
                 </select>
+                <input className="postTitle" type="text" ref="subTopicTitle" />
                 <textarea className="postBody" ref="subTopicBody" />
                 <input type="submit" value="submit"></input>
               </form>

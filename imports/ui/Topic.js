@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
+import { Link } from 'react-router-dom';
 
 class Topic extends Component {
 
@@ -10,12 +11,16 @@ class Topic extends Component {
 
   render() {
     const { currentUser, post } = this.props;
+    let postIdString = "";
+    if (post) {postIdString = "/edittopic:" + post._id;}
 
     if (post) {
       return (
         <div>
-          <h1 className="forumTopicList">{post.title}</h1> 
-          {currentUser && currentUser.isAdmin && <button className="delete" onClick={this.deleteThisPost.bind(this)}>&times;</button>}
+        {currentUser && currentUser.isAdmin && <button className="delete" onClick={this.deleteThisPost.bind(this)}>&times;</button>}
+        <h1 className="forumTopic">{post.title} - </h1>
+        <span>{post.text}</span>
+        {currentUser && currentUser._id == post.ownerId && <Link className="editLink" to={postIdString}>Edit</Link>} 
         </div>
       );
     } else {

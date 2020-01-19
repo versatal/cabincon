@@ -12,6 +12,10 @@ import GameDetails from '../ui/GameDetails.js';
 import SubTopic from '../ui/SubTopic.js';
 import NotFoundPage from '../ui/NotFoundPage.js';
 import Post from '../ui/Post.js';
+import EditPost from '../ui/EditPost.js';
+import EditReply from '../ui/EditReply.js';
+import EditTopic from '../ui/EditTopic.js';
+import EditSubTopic from '../ui/EditSubTopic.js';
 
 const browserHistory = createBrowserHistory();
 
@@ -28,6 +32,10 @@ export const Routes = () => (
         <Route exact path="/gamedetails:gameid" component={GameDetails}/>
         <Route exact path="/post:postid" component={Post}/>
         <Route exact path="/subtopic:subtopicid" component={SubTopic}/>
+        <Route exact path="/editpost:postid" component={EditPost}/>
+        <Route exact path="/editreply:postid" component={EditReply}/>
+        <Route exact path="/edittopic:postid" component={EditTopic}/>
+        <Route exact path="/editsubtopic:postid" component={EditSubTopic}/>
         <Route component={NotFoundPage}/>
       </Switch>
     </div>

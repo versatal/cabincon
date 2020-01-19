@@ -4,6 +4,8 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Posts } from '../api/posts.js';
 import ReplyPost from './ReplyPost.js';
+import marked from 'marked';
+import { Link } from 'react-router-dom';
 
 class Post extends Component {
 
@@ -23,14 +25,46 @@ class Post extends Component {
   }
 
   render() {
+    const markedownInstructionsOne = `
+    Heading
+    =======
+    
+    Sub-heading
+    -----------
+    
+    Paragraphs are separated
+    by a blank line.
+    
+    Leave 2 spaces at the end of a line to do a  
+    line break
+    `
+    const markedownInstructionsTwo = `
+    Text attributes:
+    
+    *italic*  
+    **bold**  
+    ~~strikethrough~~
+
+    A Link  
+    [Roger Hardin](https://www.freecodecamp.com/versatal)
+
+    An Image  
+    ![sword](https://visualpharm.com/assets/988/Sword-595b40b65ba036ed117d1695.svg)
+    `
+
     const { post, currentUser, posts } = this.props;
     const replies = posts.filter(reply => reply.replyTo == post._id);
-
+    let postIdString = "";
+    if (post) {postIdString = "/editpost:" + post._id;}
+    
     if (post) {
       return (
         <div className="container">
-          <div className="postTitle"><h1>{post.title}</h1></div>
-          <div className="postBody"><span>{post.text}</span></div>
+          <div className="postTitle">
+            <h1>{post.title}</h1>
+            {currentUser && currentUser._id == post.ownerId && <Link to={postIdString}>Edit</Link>} 
+            </div>
+          <div className="postBody" dangerouslySetInnerHTML={{__html: marked(post.text)}}></div>
           <div>
             <div className="repliesHeader"><span>Replies</span></div>
             {replies.length < 1 ? <div className="repliesList">Be the first to reply to this post!</div> :
@@ -43,10 +77,17 @@ class Post extends Component {
           </div>
           <div className="replyPost">
             <form onSubmit={this.handleSubmitPost.bind(this)} >
-              <h3>Reply</h3>
+              <h4>Post Your Reply</h4>
               <textarea className="replyBody" ref="replyBody" />
               <input type="submit" value="submit" />
             </form>          
+          </div>
+          <div className="markedHeading">
+            <h4>You may use markdown to format your post:</h4>
+          </div>
+          <div className="markedArea">
+            <div className="markdInst"><textarea>{markedownInstructionsOne}</textarea></div>
+            <div className="markdInst"><textarea>{markedownInstructionsTwo}</textarea></div>
           </div>
         </div>
       )  
