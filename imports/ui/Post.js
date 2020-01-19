@@ -46,7 +46,7 @@ class Post extends Component {
     ~~strikethrough~~
 
     A Link  
-    [Roger Hardin](https://www.freecodecamp.com/versatal)
+    [Roger Hardin](https://codepen.io/volcivar)
 
     An Image  
     ![sword](https://visualpharm.com/assets/988/Sword-595b40b65ba036ed117d1695.svg)
