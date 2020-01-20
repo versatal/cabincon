@@ -151,11 +151,11 @@ class GameDetails extends Component {
                 <div className="gameBlockRight"><span className="gameData"> {game.players.join(", ")}</span></div>
               </div>
               <div>
-                <div>
-                  <label className="gameLabel">Long Description </label>
-                  <input className="gameButton" type="button" value="edit" onClick={this.handleEditDetails.bind(this)}/>
+                <div className="gameBlock">
+                  <div className="gameBlockLeft"><span className="gameLabel">Long Description:</span></div>
+                  <div className="gameBlockRight"><input className="gameButton" type="button" value="edit" onClick={this.handleEditDetails.bind(this)}/></div>
                 </div>
-                <div><textarea className="longDescription" ref="long" defaultValue={game.longDescription} disabled={this.state.disableDetails}/></div>
+                <div className="longDescription"><textarea ref="long" defaultValue={game.longDescription} disabled={this.state.disableDetails}/></div>
               </div>              
               <input className="gameSubmit" type="submit" value="submit"></input>
             </form> : <div>Cannot edit info</div>

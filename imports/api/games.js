@@ -71,7 +71,8 @@ Meteor.methods({
     check(gameId, String);
  
     Games.update(gameId, { 
-                 $set: { title: "New game", description: "Game Description", open: true, gameMaster: '', players: [] }
+                 $set: { title: "New game", description: "Game Description", open: true, gameMaster: '', players: [], longDescription: '', maxSeats: 4, gameSystem: '',
+                }
     });
   },
   'games.addPlayer'(gameId, player) {

@@ -60,8 +60,8 @@ class Schedule extends Component {
             currentUser ?
               currentUser.isAdmin &&
               <header>
-                <span>Add slots</span>
                 <form className="slotAdd" onSubmit={this.addSlot.bind(this)}>
+                  <span>Add slots</span>
                   <select name="weekDays" ref="slotDay">
                     <option value="1">Thursday</option>
                     <option value="2">Friday</option>
