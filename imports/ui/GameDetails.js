@@ -85,7 +85,7 @@ class GameDetails extends Component {
       return (
         <div className="gameContainer">
           {currentUser ? game.gameMaster == currentUser.username ? 
-            <form className="slotAdd" onSubmit={this.handleSubmit.bind(this)}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
               <h1>Game Details - {game.title}</h1>
               <div className="gameBlock">
                 <div className="gameBlockLeft"><label className="gameLabel">Game Title: </label></div>

@@ -16,11 +16,18 @@ class Topic extends Component {
 
     if (post) {
       return (
-        <div>
-        {currentUser && currentUser.isAdmin && <button className="delete" onClick={this.deleteThisPost.bind(this)}>&times;</button>}
-        <h1 className="forumTopic">{post.title} - </h1>
-        <span>{post.text}</span>
-        {currentUser && currentUser._id == post.ownerId && <Link className="editLink" to={postIdString}>Edit</Link>} 
+        <div className="forumTopic">
+          <div className="forumTopicId">
+            {currentUser && currentUser.isAdmin && <button className="topicDelete" onClick={this.deleteThisPost.bind(this)}>&times;</button>}
+            <h1>{post.title}</h1>
+            {currentUser && currentUser._id == post.ownerId && <Link className="topicEditLink" to={postIdString}>Edit</Link>} 
+          </div>
+          <div className="forumTopicPosts">
+            <span>Posts</span>
+          </div>
+          <div className="forumTopicLatest">
+            <span>Latest Post</span>
+          </div>
         </div>
       );
     } else {

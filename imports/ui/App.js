@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class App extends Component {
   constructor(props) {
@@ -43,13 +44,18 @@ getTimeUntil(deadline) {
 }
   render() {
     return (
-      <div className="Clock">
-        <div className="Clock-title">Countdown to Cabin Con 2020.  May 14 thru May 17</div>
-        <div className="Clock-face">
-          <div className="Clock-days">{this.leading0(this.state.days)} Days</div>
-          <div className="Clock-hours">{this.leading0(this.state.hours)} Hours</div>
-          <div className="Clock-minutes">{this.leading0(this.state.minutes)} Minutes</div>
-          <div className="Clock-seconds">{this.leading0(this.state.seconds)} Seconds</div>
+      <div>
+        <div className="Clock">
+          <div className="Clock-title">Countdown to Cabin Con 2020.  May 14 thru May 17</div>
+          <div className="Clock-face">
+            <div className="Clock-days">{this.leading0(this.state.days)} Days</div>
+            <div className="Clock-hours">{this.leading0(this.state.hours)} Hours</div>
+            <div className="Clock-minutes">{this.leading0(this.state.minutes)} Minutes</div>
+            <div className="Clock-seconds">{this.leading0(this.state.seconds)} Seconds</div>
+          </div>
+        </div>
+        <div className="siteEntry">
+          <Link className="entryLink" to="/schedule">Enter</Link>
         </div>
       </div>
     )

@@ -21,23 +21,25 @@ const browserHistory = createBrowserHistory();
 
 export const Routes = () => (
   <Router history={browserHistory}>
-    <div>
-      <Navigation />
-      <Switch>
-        <Route exact path="/" component={App}/>
-        <Route exact path="/blog" component={Blog}/>
-        <Route exact path="/forum" component={Forum}/>
-        <Route exact path="/schedule" component={Schedule}/>
-        <Route exact path="/admin" component={Admin}/>
-        <Route exact path="/gamedetails:gameid" component={GameDetails}/>
-        <Route exact path="/post:postid" component={Post}/>
-        <Route exact path="/subtopic:subtopicid" component={SubTopic}/>
-        <Route exact path="/editpost:postid" component={EditPost}/>
-        <Route exact path="/editreply:postid" component={EditReply}/>
-        <Route exact path="/edittopic:postid" component={EditTopic}/>
-        <Route exact path="/editsubtopic:postid" component={EditSubTopic}/>
-        <Route component={NotFoundPage}/>
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path="/" component={App}/>
+      <div>
+        <Navigation />
+        <Switch>
+          <Route exact path="/blog" component={Blog}/>
+          <Route exact path="/forum" component={Forum}/>
+          <Route exact path="/schedule" component={Schedule}/>
+          <Route exact path="/admin" component={Admin}/>
+          <Route exact path="/gamedetails:gameid" component={GameDetails}/>
+          <Route exact path="/post:postid" component={Post}/>
+          <Route exact path="/subtopic:subtopicid" component={SubTopic}/>
+          <Route exact path="/editpost:postid" component={EditPost}/>
+          <Route exact path="/editreply:postid" component={EditReply}/>
+          <Route exact path="/edittopic:postid" component={EditTopic}/>
+          <Route exact path="/editsubtopic:postid" component={EditSubTopic}/>
+          <Route component={NotFoundPage}/>
+        </Switch>
+      </div>
+    </Switch>
   </Router>  
 )

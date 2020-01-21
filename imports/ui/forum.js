@@ -75,7 +75,7 @@ class Forum extends Component {
     return (
       <div className="container">
         <div className="forumHeader">
-          <h1>Cabin Con Forum</h1>
+          <h1>BiggusGeekus Forum</h1>
         </div>
         <div className="forumTopicList">
           {this.renderTopics()}
