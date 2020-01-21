@@ -17,10 +17,16 @@ class ReplyPost extends Component {
     if (post) {
       return (
         <div className="replyGroup">
-          <div className="replyPostBody" dangerouslySetInnerHTML={{__html: marked(post.text)}}></div>
-          <div className="postOwnerMenu"> - by {post.owner} 
-            {currentUser && currentUser._id == post.ownerId && <button className="delete" onClick={this.deleteThisPost.bind(this)}>&times;</button>}  
-            {currentUser && currentUser._id == post.ownerId && <Link to={postIdString}>Edit</Link>} 
+          <div className="postOwnerInfo">
+            <span>{post.owner}</span>
+            <img src="/warrior.jpg" />
+          </div>
+          <div className="replyPostDetails">
+            <div className="replyPostBody" dangerouslySetInnerHTML={{__html: marked(post.text)}}></div>
+            <div className="replyPostOwnerMenu"> - by {post.owner} 
+              {currentUser && currentUser._id == post.ownerId && <button className="delete" onClick={this.deleteThisPost.bind(this)}>&times;</button>}  
+              {currentUser && currentUser._id == post.ownerId && <Link to={postIdString}>Edit</Link>} 
+            </div>        
           </div>        
         </div>
       );

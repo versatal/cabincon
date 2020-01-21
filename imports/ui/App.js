@@ -45,6 +45,7 @@ getTimeUntil(deadline) {
   render() {
     return (
       <div>
+        <img className="hero-image" src="https://theplaylist.net/wp-content/uploads/2016/05/5-things-you-might-not-know-about-star-trek-ii-wrath-of-khan-30th-anniversary-1200x520.png" />
         <div className="Clock">
           <div className="Clock-title">Countdown to Cabin Con 2020.  May 14 thru May 17</div>
           <div className="Clock-face">

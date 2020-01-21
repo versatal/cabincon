@@ -60,13 +60,22 @@ class Post extends Component {
     if (post) {
       return (
         <div className="container">
-          <div className="postTitle">
-            <h1>{post.title}</h1>
-            {currentUser && currentUser._id == post.ownerId && <Link to={postIdString}>Edit</Link>} 
+          <h1 className="threadTitle">{post.title}</h1>
+          <div className="mainPost">
+            <div className="postOwnerInfo">
+              <span>{post.owner}</span>
+              <img src="/warrior.jpg" />
             </div>
-          <div className="postBody" dangerouslySetInnerHTML={{__html: marked(post.text)}}></div>
+            <div className="postDetails">
+              <div className="postTitle">
+                <span>{post.title}</span>
+                {currentUser && currentUser._id == post.ownerId && <Link to={postIdString}>Edit</Link>} 
+                <hr></hr>
+                </div>
+              <div className="postBody" dangerouslySetInnerHTML={{__html: marked(post.text)}}></div>
+            </div>
+          </div>
           <div>
-            <div className="repliesHeader"><span>Replies</span></div>
             {replies.length < 1 ? <div className="repliesList">Be the first to reply to this post!</div> :
               <div className="repliesList">
                 {replies.map(function(reply) {

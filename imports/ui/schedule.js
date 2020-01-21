@@ -9,17 +9,16 @@ import styled from 'styled-components';
 const GridLayout = styled.div`
 display:grid;
 grid-template-columns: 20% 20% 20% 20% 20%;
-background-color: #2196F3;
-padding: 10px;
+padding: 10px 10px 0px 10px;
 `;
 
 const StyledDateHeader = styled.div`
   grid-column: 1 / span 5;
-  background-color: #2196F3;
+  background-color: chocolate;
   height: 40px;
   text-align: center;
   padding: 0px;
-  margin: 20px 0px;
+  margin: 10px 0px 0px 0px;
 `;
 
 class Schedule extends Component {
@@ -55,25 +54,7 @@ class Schedule extends Component {
     if (currentUser) {
       return (
         <div className="container">
-          
-          {
-            currentUser ?
-              currentUser.isAdmin &&
-              <header>
-                <form className="slotAdd" onSubmit={this.addSlot.bind(this)}>
-                  <span>Add slots</span>
-                  <select name="weekDays" ref="slotDay">
-                    <option value="1">Thursday</option>
-                    <option value="2">Friday</option>
-                    <option value="3">Saturday</option>
-                    <option value="4">Sunday</option>
-                  </select>
-                  <input type="submit" value="submit"></input>
-                </form>
-              </header>
-            : <span>Loading...</span>
-          }
-  
+          <header>CabinCon Schedule</header>
           <GridLayout>
             <div className="colHeaders">Game Title</div>
             <div className="colHeaders">Game Description</div>
@@ -89,6 +70,23 @@ class Schedule extends Component {
             <StyledDateHeader><p className="gameDayHeader">Sunday</p></StyledDateHeader>
             {this.renderGames(4, thursdayCount + 6 + fridayCount + saturdayCount, thursdayCount + 6 + fridayCount + fridayCount + saturdayCount + sundayCount)}
           </GridLayout>
+          {
+            currentUser ?
+              currentUser.isAdmin &&
+              <footer>
+                <form className="slotAdd" onSubmit={this.addSlot.bind(this)}>
+                  <span>Add slots</span>
+                  <select name="weekDays" ref="slotDay">
+                    <option value="1">Thursday</option>
+                    <option value="2">Friday</option>
+                    <option value="3">Saturday</option>
+                    <option value="4">Sunday</option>
+                  </select>
+                  <input type="submit" value="submit"></input>
+                </form>
+              </footer>
+            : <span>Loading...</span>
+          }          
         </div>
       );
   

@@ -1,25 +1,33 @@
 /* CSS declarations go here */
 body {
   font-family: sans-serif;
-  background-color: #D6CCA9;
- 
+  background-color: #d6cca9;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
- 
   padding: 0;
   margin: 0;
- 
   font-size: 14px;
 }
  
+.hero-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
 .container {
   max-width: 80%;
   margin: 0 auto;
   min-height: 100%;
   background: cornsilk;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .siteEntry {
@@ -140,8 +148,13 @@ body {
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+footer {
   padding: 5px 15px 15px 15px;
   position: relative;
 }
@@ -232,12 +245,13 @@ ul {
 .delete {
   font-weight: bold;
   background: none;
-  font-size: 20px;
+  font-size: 16px;
   border: none;
-  background-color: darkred;
+  background-color: crimson;
   text-decoration: none;
   color: white;
-  padding: 0;
+  padding: 0 3px;
+  margin: auto;
   margin-right: 5px;
 }
 
@@ -267,13 +281,15 @@ ul {
 
 .colHeaders {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
+  color: dimgray
 }
 
 .gameLink {
-  font-size: 20px;
-  padding: 0;
+  font-size: 18px;
   text-decoration: none;
+  color: black;
+  margin-top: 15px;
 }
 
 .gameMaster {
@@ -302,9 +318,8 @@ ul {
 
 .gameItem {
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.8);
   height: 32px;
-  border: 1px solid black;
+  border: 1px solid darkred;
   padding: 5px;
 }
 
@@ -344,12 +359,13 @@ header .hide-completed {
 .Clock {
   margin-top: 20%;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid darkred;
 }
 
 .Clock-title {
   display: block;
   font-size: 3em;
+  color: darkred;
 }
 
 .Clock-days, .Clock-hours, .Clock-minutes, .Clock-seconds {
@@ -357,6 +373,7 @@ header .hide-completed {
   display: inline;
   margin: 15px;
   font-size: 6em;
+  color: darkred;
 }
 
 .forumHeader {
@@ -447,8 +464,14 @@ header .hide-completed {
   margin-bottom: 20px;
 }
 
-.subTopicHeader, .topicalPostsList {
-  padding: 10px;
+.topicalPostsList {
+  padding: 0px 5px;
+}
+
+.subTopicHeader {
+  background-color: chocolate;
+  margin: 10px 5px 0px 5px;
+  padding: 5px;
 }
 
 .subTopicLink {
@@ -485,6 +508,8 @@ header .hide-completed {
 
 .topicalPostLink {
   padding: 5px;
+  border: 1px solid darkred;
+  border-top: none;
 }
 
 .subTopicTitle {
@@ -521,16 +546,47 @@ header .hide-completed {
   display: inline;
 }
 
+.threadTitle {
+  margin: 0px 10px;
+}
+.mainPost {
+  display: flex;
+  border: 1px solid darkred;
+  margin: 0px 10px 10px 10px;
+}
+
+.postOwnerInfo {
+  padding: 5px;
+}
+
+.postOwnerInfo span {
+}
+
+.postOwnerInfo img {
+  width: 100px;
+  margin: 10px 0px 0px 0px;
+  display: block;
+}
+
+.postDetails {
+  border-left: 1px solid darkred;
+  width: 100%;
+}
+
 .postTitle {
-  padding: 10px;
+  padding: 15px 10px 0px 10px;
   width: 100%;
   box-sizing: border-box;
 }
 
+.postTitle span {
+  font-weight: 600;
+}
+
 .postBody {
-  padding: 0px 10px;
+  padding: 0px 10px 5px 10px;
   width: 100%;
-  height: 100px;
+  height: auto;
   box-sizing: border-box;
 }
 
@@ -541,6 +597,15 @@ header .hide-completed {
 
 .replyPost {
   padding: 10px;
+}
+
+.replyPostDetails {
+  border-left: 1px solid darkred;
+  display: flex;
+}
+
+.replyPostOwnerMenu {
+  margin-top: 15px;
 }
 
 .repliesHeader {
@@ -555,10 +620,12 @@ header .hide-completed {
 
 .replyGroup {
   display: flex;
+  border: 1px solid darkred;
+  margin: 10px 0;
 }
 
 .replyPostBody {
-  padding: 0;
+  padding: 0 10px;
   width: auto;
   height: auto;
 }

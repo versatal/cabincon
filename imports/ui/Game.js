@@ -47,7 +47,7 @@ class Game extends Component {
           
           <div className="gameItem"><Link to={gameidString} className="gameLink">{game.description}</Link></div>
           
-          <div className="gameItem">{game.gameSystem ? <span>{game.gameSystem}</span> : <span><Link to={gameidString} className="gameLink">click to edit</Link></span>}</div>
+          <div className="gameItem">{game.gameSystem ? <span><Link to={gameidString} className="gameLink">{game.gameSystem}</Link></span> : <span><Link to={gameidString} className="gameLink">click to edit</Link></span>}</div>
 
           {game.gameMaster ? 
             game.gameMaster == currentUser.username ? 
