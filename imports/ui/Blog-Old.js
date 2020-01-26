@@ -21,7 +21,7 @@ class Blog extends Component {
         )            
       })        
     } else {
-      return <div>No Comments Yet</div>
+      return <div>No Comments are Posted Yet</div>
     }
   }
 
