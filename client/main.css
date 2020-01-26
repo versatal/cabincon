@@ -615,7 +615,7 @@ header .hide-completed {
 }
 
 .repliesList {
-  padding: 0px 10px 10px 10px;
+  padding: 0px 10px 10px 30px;
 }
 
 .replyGroup {
@@ -675,6 +675,355 @@ header .hide-completed {
 
 .editLink {
   margin-left: 15px;
+}
+
+.blogMainHeader {
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogMainHeader h1 {
+  font-size: 32px;
+  margin: 5px auto;
+}
+
+.blogCreateLink {
+  margin: 0 auto;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: blue;
+  padding: 3px;
+}
+
+.blogAndForum {
+  margin: 10px 10px 0px 10px;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+}
+
+.blogGroup {
+  width: 75%;
+  margin-right: 20px;
+  box-sizing: border-box;
+}
+
+.blogContainer {
+  display: flex;
+}
+
+.blogHeader {
+  text-align: center;
+}
+
+.blogTitle {
+  font-size: 32px;
+  padding: 5px 0px;
+}
+
+.blogItem {
+  width: 75%;
+  padding-bottom: 10px;
+  margin: 10px;
+}
+
+.blogItemHeader {
+  background-color: chocolate;
+  display: flex;
+  height: 40px;
+}
+
+.blogItemHeader span {
+  margin: 0;
+  padding: 10px 10px;
+  font-style: italic;
+
+}
+
+.blogItemHeader button {
+  height: auto;  
+  background-color: crimson;
+  color: white;
+  border: none;
+}
+
+.blogPreviewItem {
+  width: 100%;
+  padding-bottom: 10px;
+  border: 1px solid darkred;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.blogPreviewHeader {
+  background-color: chocolate;
+  display: flex;
+  height: 40px;
+  padding: 0px 10px;
+}
+
+.blogPreviewItem span {
+  padding: 15px 10px 5px 10px;
+  font-style: italic;
+}
+
+.blogPreviewBody {
+  padding: 5px 10px 10px 10px;
+}
+
+.blogPreviewLink {
+  margin-left: 10px;
+}
+
+.blogEditLink {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 13px 10px;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: cadetblue;
+  color: white;
+  font-size: 12px;
+
+}
+
+.blogBodyGroup {
+  border: 1px solid darkred;
+  padding: 10px;  
+}
+
+.blogBody {
+  padding: 0px 10px;
+}
+.editorPreviewGroup {
+  display: flex;
+  padding: 0px 10px;
+}
+
+.blogEditorHeader {
+  text-align: center;
+}
+
+.blogEditorHeader h1 {
+  margin: 10px 0px 15px 0px;
+  font-size: 32px;
+}
+
+.editorGroupHeader {
+  border: 1px solid darkred;
+  background-color: chocolate;
+  height: 40px;
+  text-align: center;  
+}
+
+.editorGroupHeader h3 {
+  margin: 0;
+  padding: 10px;
+}
+
+.blogEditor {
+  border: 1px solid darkred;
+  margin: 0;
+  width: 50%;
+  padding-bottom: 15px;
+}
+
+.blogEditorGroup {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogEditorTitle {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.blogEditorBody {
+  width: 100%;
+  height: 500px;
+  box-sizing: border-box;
+
+}
+
+.blogEditPreview {
+  margin-left: 20px;
+  width: 50%;
+  border: 1px solid darkred;
+}
+
+.blogEditTitlePreview {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.newBlogPreview {
+  width: 100%;
+  min-height: 500px;
+  box-sizing: border-box;
+  padding: 10px; 
+}
+
+.blogUpdate {
+  border: 1px solid black;
+}
+
+.blogUpdate  {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogUpdateHeader {
+  text-align: center;
+  background-color: chocolate;
+}
+
+.blogUpdateHeader h1 {
+  padding: 15px 0;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+
+
+.editBlogTitle {
+ width: 100%;
+ box-sizing: border-box;
+}
+
+.editBlogBody {
+  width: 100%;
+  min-height: 500px;
+  box-sizing: border-box;
+ 
+}
+
+.commentBlock {
+  margin-top: 0px;
+}
+
+.commentBlockTitle {
+  margin: 20px 0px 0px 0px;
+}
+
+.commentItem {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darkred;
+  padding : 10px;
+  margin-bottom: 10px;
+}
+
+.commentItem span {
+  font-style: italic;
+}
+.commentItem button {
+  width: 55px;
+  margin-right: 10px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.commentEditLink {
+  padding: 8px 8px;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: cadetblue;
+  color: white;
+  font-size: 9px;
+}
+
+.commentEdit {
+  padding: 10px;
+}
+
+.addCommentBlock {
+  border: 1px solid darkred;
+  padding: 10px 15px 10px 10px;
+  margin-top: 20px;
+}
+
+.addCommentBlock form {
+  margin-bottom: 5px;  
+}
+
+.addCommentBlock textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.editCommentBody {
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  margin: 0px 10px 10px 0px;
+  
+
+}
+
+.blogArchive {
+  box-sizing: border-box;
+  border: 1px solid darkred;
+  width: 25%;
+  margin: 10px 10px 15px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogArchiveHeader {
+  background-color: chocolate;
+  margin: 0;
+  height: 40px;
+  text-align: center;
+}
+
+.blogArchiveHeader h3 {
+  margin: auto 0;
+  padding: 10px;
+}
+
+.archiveList {
+  padding: 10px;
+}
+
+.archiveItem {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.archiveLink {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.archivePostingDetails {
+  font-size: 12px;
+  font-style: italic;
+
+}
+
+.forumGroup {
+  width: 20%;
 }
 
 @media (max-width: 600px) {

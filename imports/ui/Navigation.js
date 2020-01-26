@@ -16,7 +16,7 @@ class Navigation extends Component {
           <AccountsUIWrapper />
           <Link className="menu-item" to="/">Countdown</Link>      
           <Link className="menu-item" to="/schedule">Schedule</Link>      
-          <Link className="menu-item" to="/blog">Blog</Link>      
+          <Link className="menu-item" to="/bloglist">Blog</Link>      
           <Link className="menu-item" to="/forum">Forum</Link>      
           {currentUser && currentUser.isAdmin && <Link className="menu-item" to="/admin">Admin</Link>}      
         </div>
