@@ -4,7 +4,7 @@ import { createBrowserHistory } from 'history';
 import Navigation from '../ui/Navigation.js';
 
 import App from '../ui/App.js';
-import Blog from '../ui/Blog.js';
+//import Blog from '../ui/Blog.js';
 import BlogList from '../ui/BlogList.js';
 import AddBlog from '../ui/AddBlog.js';
 import Admin from '../ui/admin.js';
@@ -29,7 +29,7 @@ export const Routes = () => (
     <Switch>
       <Route exact path="/" component={App}/>
       <Route exact path="/bloglist" component={BlogList}/> 
-      <Route exact path="/blog:blogid" component={Blog}/>
+  {/*    <Route exact path="/blog:blogid" component={Blog}/> */}
       <Route exact path="/addblog" component={AddBlog}/>
       <Route exact path="/forum" component={Forum}/>
       <Route exact path="/schedule" component={Schedule}/>
