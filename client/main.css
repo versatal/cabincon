@@ -57,7 +57,7 @@ body {
   min-height: 100%;
   background: white;
   text-align: center;
-  padding: 5px 0px;
+  padding: 0px 0px;
 }
 
 .gameContainer h1 {
@@ -139,12 +139,14 @@ body {
 
 .gameSubmit {
   margin: 10px auto;
-  width: 200px;
-  height: 40px;
-  font-size: 26px;
+  width: 100px;
+  height: 32px;
+  font-size: 20px;
   text-transform: uppercase;
   border-radius: 15px;
-  background-color: forestgreen;
+  background-color: crimson;
+  color: white;
+  border: none;
 }
 
 header {
@@ -322,6 +324,24 @@ ul {
   border: 1px solid darkred;
   padding: 5px;
 }
+
+.gameDetailsGroup {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.gameDetailsHeader {
+  background-color: chocolate;
+  height: 40px;
+}
+
+.gameDetailsHeader h1 {
+  margin: 0;
+  padding: 8px
+}
+
+
 
 li {
   position: relative;
@@ -557,9 +577,6 @@ header .hide-completed {
 
 .postOwnerInfo {
   padding: 5px;
-}
-
-.postOwnerInfo span {
 }
 
 .postOwnerInfo img {
