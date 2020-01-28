@@ -22,11 +22,13 @@ class EditReply extends Component {
     if (post) {
       return (
         <div className="container">
-          <div className="postEdit">
-            <form onSubmit={this.handleEditTextOnly.bind(this)} >
-              <h3>Edit Reply</h3>
-              <textarea className="editText" ref="postBody" defaultValue={this.props.post.text} />
-              <input type="submit" value="submit" />
+          <div className="replyEdit">
+            <div className="replyEditHeader">
+              <h1>Edit Reply</h1>
+            </div>
+            <form className="replyEditForm" onSubmit={this.handleEditTextOnly.bind(this)} >
+              <textarea className="replyEditText" ref="postBody" defaultValue={this.props.post.text} />
+              <input className="replyEditSubmit" type="submit" value="submit" />
             </form>          
           </div>
         </div>

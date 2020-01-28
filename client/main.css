@@ -52,12 +52,12 @@ body {
 }
 
 .gameContainer {
-  max-width: 50%;
+  max-width: 80%;
   margin: 0 auto;
   min-height: 100%;
-  background: white;
+  background: cornsilk;
   text-align: center;
-  padding: 0px 0px;
+  padding: 10px 0px;
 }
 
 .gameContainer h1 {
@@ -183,10 +183,11 @@ h1 {
 }
 
 .navBar {
+  width: 80%;
   display:flex;
   justify-content: space-between;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 
 .menu {
@@ -326,9 +327,12 @@ ul {
 }
 
 .gameDetailsGroup {
+  width: 60%;
+  margin:0 auto;
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
+  border: 1px solid darkred;
 }
 
 .gameDetailsHeader {
@@ -566,8 +570,14 @@ header .hide-completed {
   display: inline;
 }
 
-.threadTitle {
+.threadHeader {
+  background-color: chocolate;
   margin: 0px 10px;
+}
+
+.threadHeader h1 {
+  margin: 0px 10px;
+  padding: 5px 0px;
 }
 .mainPost {
   display: flex;
@@ -676,9 +686,145 @@ header .hide-completed {
   border: none;
 }
 
-.postEdit {
+.topicEdit {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid darkred;
+  display: flex;
+  flex-direction: column;
+}
+
+.topicEditHeader {
+  background-color: chocolate;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+.topicEditHeader h1 {
+  font-size: 32px;
+}
+
+.topicEditForm {
   padding: 10px;
 }
+.topicEditTitle {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+
+.topicEditText {
+  width: 100%;
+  height: 50px;
+  height: 400px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.subTopicEdit {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid darkred;
+  display: flex;
+  flex-direction: column;
+}
+
+.subTopicEditHeader {
+  background-color: chocolate;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+.subTopicEditHeader h1 {
+  font-size: 32px;
+}
+
+.subTopicEditForm {
+  padding: 10px;
+}
+.subTopicEditTitle {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+
+.subTopicEditText {
+  width: 100%;
+  height: 50px;
+  height: 400px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.postEdit {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid darkred;
+  display: flex;
+  flex-direction: column;
+}
+
+.postEditHeader {
+  background-color: chocolate;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+.postEditHeader h1 {
+  font-size: 32px;
+}
+
+.postEditForm {
+  padding: 10px;
+}
+.postEditTitle {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+
+.postEditText {
+  width: 100%;
+  height: 50px;
+  height: 400px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.replyEdit {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid darkred;
+  display: flex;
+  flex-direction: column;
+}
+
+.replyEditHeader {
+  background-color: chocolate;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+.replyEditHeader h1 {
+  font-size: 32px;
+}
+
+.replyEditForm {
+  padding: 10px;
+}
+
+.replyEditText {
+  width: 100%;
+  height: 50px;
+  height: 400px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
 .editTitle {
   width: 100%;
   box-sizing: border-box;
@@ -718,7 +864,7 @@ header .hide-completed {
 .blogAndForum {
   margin: 10px 10px 0px 10px;
   display: flex;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 0px 10px;
 }
 
 .blogGroup {
@@ -997,10 +1143,9 @@ header .hide-completed {
 }
 
 .blogArchive {
-  box-sizing: border-box;
   border: 1px solid darkred;
   width: 25%;
-  margin: 10px 10px 15px 0px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
@@ -1025,6 +1170,7 @@ header .hide-completed {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
 }
 

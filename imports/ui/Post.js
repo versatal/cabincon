@@ -60,7 +60,9 @@ class Post extends Component {
     if (post) {
       return (
         <div className="container">
-          <h1 className="threadTitle">{post.title}</h1>
+          <div className="threadHeader">
+            <h1 className="threadTitle">{post.title}</h1>
+          </div>
           <div className="mainPost">
             <div className="postOwnerInfo">
               <span>{post.owner}</span>

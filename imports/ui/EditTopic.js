@@ -23,12 +23,14 @@ class EditTopic extends Component {
     if (post) {
       return (
         <div className="container">
-          <div className="postEdit">
-            <form onSubmit={this.handleEditTitleText.bind(this)} >
-              <h3>Edit Post</h3>
-              <input className="editTitle" type="text" ref="postTitle" defaultValue={this.props.post.title} />
-              <textarea className="editText" ref="postBody" defaultValue={this.props.post.text} />
-              <input type="submit" value="submit" />
+          <div className="topicEdit">
+            <div className="topicEditHeader" >
+              <h1>Edit Post</h1>
+            </div>
+            <form className="topicEditForm" onSubmit={this.handleEditTitleText.bind(this)} >
+              <input className="topicEditTitle" type="text" ref="postTitle" defaultValue={this.props.post.title} />
+              <textarea className="topicEditText" ref="postBody" defaultValue={this.props.post.text} />
+              <input className="topicEditSubmit" type="submit" value="submit" />
             </form>          
           </div>
         </div>
