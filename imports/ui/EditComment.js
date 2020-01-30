@@ -1,8 +1,11 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Comments } from '../api/comments.js';
+import PropTypes from 'prop-types';
 
 class EditComment extends Component {
 
@@ -17,7 +20,7 @@ class EditComment extends Component {
   }
 
   render() {
-    const { comment, currentUser } = this.props;
+    const { comment } = this.props;
 
     if (comment) {
       return (
@@ -35,7 +38,7 @@ class EditComment extends Component {
       return (
         <div className="container">Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -49,3 +52,8 @@ export default withTracker(({ location }) => {
     currentUser: Meteor.user(),
   };
 })(EditComment);
+
+EditComment.propTypes = {
+  comment: PropTypes.object,
+  history: PropTypes.object,
+};

@@ -41,8 +41,7 @@ Meteor.methods({
     check(gameId, String);
  
     Games.update(gameId, { 
-                 $set: { open: false },
-                 $set: { gameMaster: Meteor.users.findOne(this.userId).username } 
+                 $set: { open: false, gameMaster: Meteor.users.findOne(this.userId).username  }
     });
   },
   'games.setAll'(gameId, title, description, longDescription, maxSeats, gameSystem) {

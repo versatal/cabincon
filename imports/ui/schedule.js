@@ -1,3 +1,5 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
@@ -5,6 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Games } from '../api/games.js';
 import Game from './Game.js';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const GridLayout = styled.div`
 display:grid;
@@ -116,3 +119,12 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 })(Schedule);
+
+Schedule.propTypes = {
+  currentUser: PropTypes.object,
+  games: PropTypes.object,
+  thursdayCount: PropTypes.integer,
+  fridayCount: PropTypes.integer,
+  saturdayCount: PropTypes.integert,
+  sundayCount: PropTypes.integer,
+};

@@ -20,6 +20,10 @@ import EditTopic from '../ui/EditTopic.js';
 import EditSubTopic from '../ui/EditSubTopic.js';
 import EditBlog from '../ui/EditBlog.js';
 import EditComment from '../ui/EditComment.js';
+import News from '../ui/News.js';
+import Setting from '../ui/Setting.js';
+import System from '../ui/System.js';
+import Podcast from '../ui/Podcast.js';
 
 const browserHistory = createBrowserHistory();
 
@@ -43,6 +47,10 @@ export const Routes = () => (
       <Route exact path="/editsubtopic:postid" component={EditSubTopic}/>
       <Route exact path="/editblog:blogid" component={EditBlog}/> 
       <Route exact path="/editcomment:commentid" component={EditComment}/> 
+      <Route exact path="/news" component={News}/> 
+      <Route exact path="/setting" component={Setting}/> 
+      <Route exact path="/system" component={System}/> 
+      <Route exact path="/podcast" component={Podcast}/> 
       <Route component={NotFoundPage}/>
     </Switch>
   </Router>  

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
@@ -6,6 +8,7 @@ import { Posts } from '../api/posts.js';
 import ReplyPost from './ReplyPost.js';
 import marked from 'marked';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Post extends Component {
 
@@ -106,7 +109,7 @@ class Post extends Component {
       return (
         <div className="container">Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -121,3 +124,9 @@ export default withTracker(({ location }) => {
     currentUser: Meteor.user(),
   };
 })(Post);
+
+Post.propTypes = {
+  post: PropTypes.object,
+  currentUser: PropTypes.object,
+  posts: PropTypes.array,
+};

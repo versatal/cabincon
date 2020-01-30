@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Link } from 'react-router-dom';
-import { Posts } from '../api/posts.js';
+import PropTypes from 'prop-types';
 
 class Profile extends Component {
 
@@ -25,11 +24,13 @@ class Profile extends Component {
 
 
 export default withTracker(() => {
-  Meteor.subscribe('posts');
   Meteor.subscribe('userData');
 
   return {
-    posts: Posts.find({}).fetch(),
     currentUser: Meteor.user(),
   };
 })(Profile);
+
+Profile.propTypes = {
+  currentUser: PropTypes.object,
+};

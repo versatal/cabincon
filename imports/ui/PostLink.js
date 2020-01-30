@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class PostLink extends Component {
 
@@ -10,7 +11,7 @@ class PostLink extends Component {
   }
 
   render() {
-    const { currentUser, post } = this.props;
+    const { post } = this.props;
     const postIdString = "/post:" + post._id;
 
     if (post) {
@@ -31,3 +32,7 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 })(PostLink);
+
+PostLink.propTypes = {
+  post: PropTypes.object,
+};

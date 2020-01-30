@@ -1,8 +1,11 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Posts } from '../api/posts.js';
+import PropTypes from 'prop-types';
 
 class EditReply extends Component {
 
@@ -17,7 +20,7 @@ class EditReply extends Component {
   }
 
   render() {
-    const { post, currentUser, posts } = this.props;
+    const { post } = this.props;
 
     if (post) {
       return (
@@ -37,7 +40,7 @@ class EditReply extends Component {
       return (
         <div className="container">Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -51,3 +54,8 @@ export default withTracker(({ location }) => {
     currentUser: Meteor.user(),
   };
 })(EditReply);
+
+EditReply.propTypes = {
+  post: PropTypes.object,
+  history: PropTypes.object,
+};

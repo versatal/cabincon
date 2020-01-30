@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Comments } from '../api/comments.js';
 import marked from 'marked';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Comment extends Component {
 
@@ -33,7 +32,7 @@ class Comment extends Component {
       return (
         <div>Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -45,3 +44,8 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 })(Comment);
+
+Comment.propTypes = {
+  comment: PropTypes.object,
+  currentUser: PropTypes.object,
+};

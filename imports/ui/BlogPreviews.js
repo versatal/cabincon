@@ -4,6 +4,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Comments } from '../api/comments.js';
 import marked from 'marked';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class BlogPreviews extends Component {
 
@@ -17,7 +18,7 @@ class BlogPreviews extends Component {
 
 
   render() {
-    const { blog, currentUser  } = this.props;
+    const { blog } = this.props;
     let blogIdString = "";
     if (blog) {blogIdString = "/blog:" + blog._id;}
 
@@ -36,7 +37,7 @@ class BlogPreviews extends Component {
       return (
         <div>Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -49,3 +50,8 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 })(BlogPreviews);
+
+BlogPreviews.propTypes = {
+  blog: PropTypes.array,
+  allComments: PropTypes.array,
+};

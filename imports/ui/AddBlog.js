@@ -1,9 +1,11 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Blogs } from '../api/posts.js';
 import marked from 'marked';
+import PropTypes from 'prop-types';
 
 class AddBlog extends Component {
 
@@ -39,8 +41,6 @@ class AddBlog extends Component {
   }
 
   render() {
-    const { currentUser } = this.props;
-    console.log("state is " + this.state.title)
     if (Meteor.user) {
       return (
         <div className="container">
@@ -74,7 +74,7 @@ class AddBlog extends Component {
       return (
         <div className="container">Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -86,3 +86,8 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 })(AddBlog);
+
+AddBlog.propTypes = {
+  currentUser: PropTypes.object,
+  history: PropTypes.object,
+};

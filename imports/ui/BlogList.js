@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import { Blogs } from '../api/blogs.js';
 import BlogPreviews from './BlogPreviews.js';
 import BlogArchive from './BlogArchive.js';
+import PropTypes from 'prop-types';
 
-class Blog extends Component {
+class BlogList extends Component {
   renderBlogPreviews() {
     return this.props.blogs.map(function(blog) {
       return <BlogPreviews key={blog._id} blog={blog}/>      
@@ -14,7 +15,7 @@ class Blog extends Component {
   }
   
   render() {
-    const { blogs, comments, currentUser } = this.props;
+    const { blogs, currentUser } = this.props;
     
     return (
       <div className="container">
@@ -33,8 +34,6 @@ class Blog extends Component {
   }
 }
 
-
-
 export default withTracker(() => {
   Meteor.subscribe('userData');
   Meteor.subscribe('blogs');
@@ -43,4 +42,9 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
     blogs: Blogs.find({}).fetch(),
   };
-})(Blog);
+})(BlogList);
+
+BlogList.propTypes = {
+  blogs: PropTypes.array,
+  currentUser: PropTypes.object,
+};

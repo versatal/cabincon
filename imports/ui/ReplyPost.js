@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import marked from 'marked';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class ReplyPost extends Component {
 
@@ -44,3 +45,8 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 })(ReplyPost);
+
+ReplyPost.propTypes = {
+  currentUser: PropTypes.object,
+  post: PropTypes.object,
+};

@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
 import { Blogs } from '../api/blogs.js';
+import PropTypes from 'prop-types';
 
 class BlogArchive extends Component {
 
@@ -38,3 +39,7 @@ export default withTracker(() => {
     blogs: Blogs.find({}).fetch(),
   };
 })(BlogArchive);
+
+BlogArchive.propTypes = {
+  blogs: PropTypes.array,
+};

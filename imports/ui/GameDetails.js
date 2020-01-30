@@ -1,8 +1,11 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Games } from '../api/games.js';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
 
 class GameDetails extends Component {
 
@@ -17,23 +20,23 @@ class GameDetails extends Component {
     }
   }
 
-  handleEditTitle(e) {
+  handleEditTitle() {
     this.setState({disableTitle: !this.state.disableTitle})
   }
 
-  handleEditDescription(e) {
+  handleEditDescription() {
     this.setState({disableDescription: !this.state.disableDescription})
   }
 
-  handleEditSystem(e) {
+  handleEditSystem() {
     this.setState({disableSystem: !this.state.disableSystem})
   }
 
-  handleEditDetails(e) {
+  handleEditDetails() {
     this.setState({disableDetails: !this.state.disableDetails})
   }
 
-  handleEditSeats(e) {
+  handleEditSeats() {
     this.setState({disableSeats: !this.state.disableSeats})
   }
 
@@ -93,14 +96,18 @@ class GameDetails extends Component {
                   <div className="gameBlockLeft"><label className="gameLabel">Game Title: </label></div>
                   <div className="gameBlockRight">
                     <input className="gameInput" type="text" disabled={this.state.disableTitle} ref="title" defaultValue={game.title}></input>
-                    {currentUser && game.gameMaster == currentUser.username && <input className="gameButton" type="button" value="edit" onClick={this.handleEditTitle.bind(this)}/>}
+                    {currentUser && game.gameMaster == currentUser.username && 
+                      <input className="gameButton" type="button" value="edit" onClick={this.handleEditTitle.bind(this)}/>
+                    }
                   </div>
                 </div>
                 <div className="gameBlock">
                   <div className="gameBlockLeft"><label className="gameLabel">Game Description: </label></div>
                   <div className="gameBlockRight">
                     <input className="gameInput" type="text" disabled={this.state.disableDescription} ref="description" defaultValue={game.description}></input>
-                    {currentUser && game.gameMaster == currentUser.username && <input className="gameButton" type="button" value="edit" onClick={this.handleEditDescription.bind(this)}/>}
+                    {currentUser && game.gameMaster == currentUser.username && 
+                      <input className="gameButton" type="button" value="edit" onClick={this.handleEditDescription.bind(this)}/>
+                    }
                   </div>
                 </div>
                 <div className="gameBlock">
@@ -119,7 +126,9 @@ class GameDetails extends Component {
                       {game.gameSystem == "Homebrew" ? <option value="Homebrew" selected>Homebrew</option> : <option value="Homebrew">Homebrew</option>}                  
                       {game.gameSystem == "Other" ? <option value="Other" selected>Other</option> : <option value="Other">Other</option>}                  
                     </select>
-                    {currentUser && game.gameMaster == currentUser.username && <input className="gameButton" type="button" value="edit" onClick={this.handleEditSystem.bind(this)}/>}
+                    {currentUser && game.gameMaster == currentUser.username && 
+                      <input className="gameButton" type="button" value="edit" onClick={this.handleEditSystem.bind(this)}/>
+                    }
                   </div>
                 </div>
                 <div className="gameBlock">
@@ -145,7 +154,9 @@ class GameDetails extends Component {
                       {game.maxSeats == 9 ? <option value="9" selected>9</option> : <option value="9">9</option>}
                       {game.maxSeats == 10 ? <option value="10" selected>10</option> : <option value="10">10</option>}
                     </select>
-                    {currentUser && game.gameMaster == currentUser.username && <input className="gameButton" type="button" value="edit" onClick={this.handleEditSeats.bind(this)}/>}
+                    {currentUser && game.gameMaster == currentUser.username && 
+                      <input className="gameButton" type="button" value="edit" onClick={this.handleEditSeats.bind(this)}/>
+                    }
                   </div>
                 </div>
                 <div className="gameBlock">
@@ -155,7 +166,11 @@ class GameDetails extends Component {
                 <div>
                   <div className="gameBlock">
                     <div className="gameBlockLeft"><span className="gameLabel">Long Description:</span></div>
-                    {currentUser && game.gameMaster == currentUser.username && <div className="gameBlockRight"><input className="gameButton" type="button" value="edit" onClick={this.handleEditDetails.bind(this)}/></div>}
+                    {currentUser && game.gameMaster == currentUser.username && 
+                      <div className="gameBlockRight">
+                        <input className="gameButton" type="button" value="edit" onClick={this.handleEditDetails.bind(this)}/>
+                      </div>
+                    }
                   </div>
                   <div className="longDescription"><textarea ref="long" defaultValue={game.longDescription} disabled={this.state.disableDetails}/></div>
                 </div>              
@@ -168,7 +183,7 @@ class GameDetails extends Component {
       return (
         <div className="container">Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -182,3 +197,8 @@ export default withTracker(({ location }) => {
     currentUser: Meteor.user(),
   };
 })(GameDetails);
+
+GameDetails.propTypes = {
+  game: PropTypes.object,
+  currentUser: PropTypes.object,
+};

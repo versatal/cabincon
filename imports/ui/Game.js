@@ -1,8 +1,11 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Game extends Component {
 
@@ -47,7 +50,12 @@ class Game extends Component {
           
           <div className="gameItem"><Link to={gameidString} className="gameLink">{game.description}</Link></div>
           
-          <div className="gameItem">{game.gameSystem ? <span><Link to={gameidString} className="gameLink">{game.gameSystem}</Link></span> : <span><Link to={gameidString} className="gameLink">click to edit</Link></span>}</div>
+          <div className="gameItem">
+            {game.gameSystem ? 
+              <span><Link to={gameidString} className="gameLink">{game.gameSystem}</Link></span> 
+              : 
+              <span><Link to={gameidString} className="gameLink">Game System</Link></span>}
+          </div>
 
           {game.gameMaster ? 
             game.gameMaster == currentUser.username ? 
@@ -63,10 +71,14 @@ class Game extends Component {
 
           <div className="gameItem">
             {game.players.length > 0 && <span className="gamePlayers">{game.players.join(', ')}</span>}
-            {game.players.includes(currentUser.username) ? 
-              <button className="leave" onClick={this.leaveThisGame.bind(this)}>Leave</button>
-            : 
-              <button className="join" onClick={this.joinThisGame.bind(this)}>Join</button>}        
+            {
+              game.gameMaster.length > 0 ? 
+                game.players.includes(currentUser.username) ? 
+                  <button className="leave" onClick={this.leaveThisGame.bind(this)}>Leave</button>
+                  : 
+                  <button className="join" onClick={this.joinThisGame.bind(this)}>Join</button>
+              : <span>Waiting for a GM to claim</span>
+            }        
           </div>
        </React.Fragment>
       );
@@ -84,3 +96,8 @@ export default withTracker(() => {
     currentUser: Meteor.user(),
   };
 })(Game);
+
+Game.propTypes = {
+  game: PropTypes.object,
+  currentUser: PropTypes.object,
+};

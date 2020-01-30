@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Link } from 'react-router-dom';
 import { Posts } from '../api/posts.js';
+import PropTypes from 'prop-types';
 
 class SubTopicLink extends Component {
 
@@ -21,7 +22,7 @@ class SubTopicLink extends Component {
   }
 
   render() {
-    const { currentUser, post, posts } = this.props;
+    const { currentUser, post } = this.props;
     const subTopicIdString = "/subTopic:" + post._id;
 
     if (post) {
@@ -46,11 +47,14 @@ class SubTopicLink extends Component {
 }
 
 export default withTracker(() => {
-  Meteor.subscribe('posts');
   Meteor.subscribe('userData');
 
   return {
-    posts: Posts.find({}).fetch(),
     currentUser: Meteor.user(),
   };
 })(SubTopicLink);
+
+SubTopicLink.propTypes = {
+  currentUser: PropTypes.object,
+  post: PropTypes.object,
+};

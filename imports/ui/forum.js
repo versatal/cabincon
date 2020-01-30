@@ -1,3 +1,5 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
@@ -5,7 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Posts } from '../api/posts.js';
 import SubTopicLink from './SubTopicLink.js'
 import Topic from './Topic.js';
-
+import PropTypes from 'prop-types';
 
 class Forum extends Component {
 
@@ -117,3 +119,8 @@ export default withTracker(() => {
   };
 
 })(Forum)
+
+Forum.propTypes = {
+  posts: PropTypes.object,
+  currentUser: PropTypes.object,
+};

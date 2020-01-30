@@ -1,8 +1,11 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Posts } from '../api/posts.js';
+import PropTypes from 'prop-types';
 
 class EditTopic extends Component {
 
@@ -10,7 +13,6 @@ class EditTopic extends Component {
     event.preventDefault();
     const text = ReactDOM.findDOMNode(this.refs.postBody).value.trim();
     const title = ReactDOM.findDOMNode(this.refs.postTitle).value.trim();
-    const postIdString = "/post:" + this.props.post._id;
 
     Meteor.call("posts.editTitleText", this.props.post._id, title, text);
     this.props.history.push('/forum');
@@ -18,7 +20,7 @@ class EditTopic extends Component {
   }
 
   render() {
-    const { post, currentUser, posts } = this.props;
+    const { post } = this.props;
 
     if (post) {
       return (
@@ -39,7 +41,7 @@ class EditTopic extends Component {
       return (
         <div className="container">Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -53,3 +55,8 @@ export default withTracker(({ location }) => {
     currentUser: Meteor.user(),
   };
 })(EditTopic);
+
+EditTopic.propTypes = {
+  post: PropTypes.object,
+  history: PropTypes.object,
+};

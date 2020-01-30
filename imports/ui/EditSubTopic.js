@@ -1,8 +1,11 @@
+/* eslint-disable react/no-find-dom-node */
+/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Posts } from '../api/posts.js';
+import PropTypes from 'prop-types';
 
 class EditSubTopic extends Component {
 
@@ -18,7 +21,7 @@ class EditSubTopic extends Component {
   }
 
   render() {
-    const { post, currentUser, posts } = this.props;
+    const { post } = this.props;
 
     if (post) {
       return (
@@ -39,7 +42,7 @@ class EditSubTopic extends Component {
       return (
         <div className="container">Loading...</div>
       )
-    };
+    }
   }
 }
 
@@ -53,3 +56,8 @@ export default withTracker(({ location }) => {
     currentUser: Meteor.user(),
   };
 })(EditSubTopic);
+
+EditSubTopic.propTypes = {
+  post: PropTypes.object,
+  history: PropTypes.object,
+};
