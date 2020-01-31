@@ -15,11 +15,11 @@ class Navigation extends Component {
         <div><h1>BiggusGeekus</h1></div>
         <div className="menu">
           <AccountsUIWrapper />
-          <Link className="menu-item" to="/news">News</Link>
+{/*          <Link className="menu-item" to="/news">News</Link>
           <Link className="menu-item" to="/setting">Setting</Link>
           <Link className="menu-item" to="/system">System</Link>
           <Link className="menu-item" to="/podcast">Podcast</Link>
-          <Link className="menu-item" to="/">Cabin Con</Link>      
+    */}        <Link className="menu-item" to="/">Cabin Con</Link>      
           <Link className="menu-item" to="/bloglist">Blog</Link>      
           <Link className="menu-item" to="/forum">Forum</Link>      
           {currentUser && currentUser.isAdmin && <Link className="menu-item" to="/admin">Admin</Link>}      

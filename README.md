@@ -16,3 +16,7 @@ Major Things to do
 4.  Set up Podcast page for Politically Incorrect Gamers (PIGs)
 5.  Put in code to disallow joining a game slot before it has been claimed - done
 6.  Put in code to allow a DM to add available players and/or reserve spots for particular players that can be claimed at a later date
+7.  Set up an account/profile page
+8.  Customize login/get rid of blaze template
+9.  Set up an admin page to manage users and other data
+10. Add an avatar upload feature for user profiles
