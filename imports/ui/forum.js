@@ -121,6 +121,6 @@ export default withTracker(() => {
 })(Forum)
 
 Forum.propTypes = {
-  posts: PropTypes.object,
+  posts: PropTypes.array,
   currentUser: PropTypes.object,
 };

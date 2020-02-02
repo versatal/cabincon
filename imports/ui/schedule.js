@@ -122,9 +122,9 @@ export default withTracker(() => {
 
 Schedule.propTypes = {
   currentUser: PropTypes.object,
-  games: PropTypes.object,
-  thursdayCount: PropTypes.integer,
-  fridayCount: PropTypes.integer,
-  saturdayCount: PropTypes.integert,
-  sundayCount: PropTypes.integer,
+  games: PropTypes.array,
+  thursdayCount: PropTypes.number,
+  fridayCount: PropTypes.number,
+  saturdayCount: PropTypes.number,
+  sundayCount: PropTypes.number,
 };

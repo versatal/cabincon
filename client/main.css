@@ -193,6 +193,7 @@ h1 {
 .menu {
   text-align: right;
   padding-right: 10px;
+  display: flex;
 }
 
 .menu-item {
@@ -1187,6 +1188,100 @@ header .hide-completed {
 
 .forumGroup {
   width: 20%;
+}
+
+.userArea {
+  padding: 0;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.userLableGroup {
+  display: flex;
+  margin-top: 5px;
+  padding: 0px 5px;
+}
+
+.userLable {
+  padding-top: 3px;
+  margin-right: 5px;
+}
+
+.userLableGroup button {
+  border-radius: 5px;
+  background-color: burlywood;
+}
+
+.loginRegisterGroup {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0px 5px;
+  margin-top: 5px;
+}
+
+.loginRegisterGroupLabel {
+  height: 18px;
+  background-color: burlywood;
+  color: whitesmoke;
+  font-size: 16px;
+  padding: 3px;
+  margin-right: 5px;
+  border: 1px solid lightslategray;
+  border-radius: 5px;
+}
+.loginRegister {
+  height: 24px;
+  display: flex;
+  padding: 0;
+  margin: 0;  
+}
+
+.loginForm {
+  box-sizing: border-box;
+  margin: 0px 5px 0px 0px;
+  height: 22px;
+}
+.loginForm form {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  padding: 0px;
+}
+
+.loginForm input {
+  height: 100%;
+  font-size: 12px;
+  padding: 0px 3px;
+  margin: 0px 3px 0px 0px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.toggleLabel {
+  box-sizing: border-box;
+  height: 24px;
+  border: 1px solid darkred;
+  border-radius: 5px;
+  background-color: burlywood;
+  color: crimson;
+  padding: 3px;
+}
+
+.toggleLabel span {
+  padding: 0;
+  font-size: 12px;
+}
+
+.loginButton {
+  box-sizing: border-box;
+  height: 24px;
+  font-size: 12px;
+  background-color: lightseagreen;
+  color: whitesmoke;
+  border-radius: 5px;
+  text-transform: capitalize;
 }
 
 @media (max-width: 600px) {

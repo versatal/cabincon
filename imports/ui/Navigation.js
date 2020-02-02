@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-
-import AccountsUIWrapper from './accountsUIWrapper.js';
+import LoginRegister from './LoginRegister.js';
 
 class Navigation extends Component {
   render() {
@@ -14,7 +13,7 @@ class Navigation extends Component {
       <div className='navBar'>
         <div><h1>BiggusGeekus</h1></div>
         <div className="menu">
-          <AccountsUIWrapper />
+          <LoginRegister />
 {/*          <Link className="menu-item" to="/news">News</Link>
           <Link className="menu-item" to="/setting">Setting</Link>
           <Link className="menu-item" to="/system">System</Link>
@@ -23,7 +22,7 @@ class Navigation extends Component {
           <Link className="menu-item" to="/bloglist">Blog</Link>      
           <Link className="menu-item" to="/forum">Forum</Link>      
           {currentUser && currentUser.isAdmin && <Link className="menu-item" to="/admin">Admin</Link>}      
-        </div>
+          </div>
       </div>
     )
   }

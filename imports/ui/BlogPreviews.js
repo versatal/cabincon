@@ -52,6 +52,6 @@ export default withTracker(() => {
 })(BlogPreviews);
 
 BlogPreviews.propTypes = {
-  blog: PropTypes.array,
+  blog: PropTypes.object,
   allComments: PropTypes.array,
 };
