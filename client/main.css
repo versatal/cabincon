@@ -65,7 +65,7 @@ body {
 
 .menu {
   text-align: right;
-  padding-right: 10px;
+  padding-right: 0px;
   display: flex;
 }
 
@@ -75,12 +75,13 @@ body {
   height: 30px;
   box-sizing: border-box;
   padding: 0px;
+  padding-left: 10px;
   margin: 0px;
 }
 
 .mainMenuItem {
-  padding: 0px 10px;
-  margin: 0px;
+  padding: 0px;
+  margin: 0px 0px 0px 30px;
   border: none;
 }
 
@@ -92,6 +93,7 @@ body {
   cursor: pointer;
   margin: 0;
   padding: 0;
+
 }
 
 .mainMenuItem:hover {
@@ -119,7 +121,7 @@ body {
   padding: 10px 5px;
   text-decoration: none;
   cursor: pointer;
-  width: 140px;
+  width: 121px;
   text-align: left;
   font-size: 10px;
 }
