@@ -14,14 +14,21 @@ class Navigation extends Component {
         <div><h1>BiggusGeekus</h1></div>
         <div className="menu">
           <LoginRegister />
-{/*          <Link className="menu-item" to="/news">News</Link>
-          <Link className="menu-item" to="/setting">Setting</Link>
-          <Link className="menu-item" to="/system">System</Link>
-          <Link className="menu-item" to="/podcast">Podcast</Link>
-    */}        <Link className="menu-item" to="/">Cabin Con</Link>      
-          <Link className="menu-item" to="/bloglist">Blog</Link>      
-          <Link className="menu-item" to="/forum">Forum</Link>      
-          {currentUser && currentUser.isAdmin && <Link className="menu-item" to="/admin">Admin</Link>}      
+          <ul className="mainMenu">
+{/*         <li className="mainMenuItem"><Link className="menu-item" to="/news">News</Link></li>
+            <li className="mainMenuItem"><Link className="menu-item" to="/setting">Setting</Link></li>
+            <li className="mainMenuItem"><Link className="menu-item" to="/system">System</Link></li>
+            <li className="mainMenuItem"><Link className="menu-item" to="/podcast">Podcast</Link></li>
+    */}     <li className="mainMenuItem"><Link className="menu-item" to="#">Cabin Con</Link>
+              <ul className="subMenu">
+                <li className="subMenuItem"><Link className="menu-item" to="/">Countdown</Link></li>      
+                <li className="subMenuItem"><Link className="menu-item" to="/schedule">Schedule</Link></li>      
+              </ul>
+            </li>      
+            <li className="mainMenuItem"><Link className="menu-item" to="/bloglist">Blog</Link></li>      
+            <li className="mainMenuItem"><Link className="menu-item" to="/forum">Forum</Link></li>      
+            {currentUser && currentUser.isAdmin && <li className="mainMenuItem"><Link className="menu-item" to="/admin">Admin</Link></li>}      
+          </ul>
           </div>
       </div>
     )
