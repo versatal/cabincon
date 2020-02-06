@@ -1338,6 +1338,69 @@ header .hide-completed {
   text-transform: capitalize;
 }
 
+.profileHeader {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.profileHeader h1{
+  font-size: 36px;
+}
+
+.profileContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.userInfo {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.userItem {
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.userItem form {
+  display: flex;
+}
+
+.userAvatar {
+  flex-direction: column;
+
+}
+.avatar {
+  width: 100px;
+  height: 200px;
+  margin: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.forumSigGroup {
+  display: flex;
+  flex-direction: column;
+}
+.forumSignature {
+  width: 100%;
+  height: 150px;
+}
+
+.userGames {
+  width: 30%;
+  border: 1px solid black;
+}
+
+.userPosts {
+  width: 30%;
+  border: 1px solid black;
+}
+
 @media (max-width: 600px) {
   li {
     padding: 12px 15px;

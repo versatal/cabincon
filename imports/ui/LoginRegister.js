@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import RegisterUser from './RegisterUser.js';
 import LoginUser from './LoginUser.js';
+import { Link } from 'react-router-dom';
 
 export default class LoginRegister extends Component {
 
@@ -28,7 +29,7 @@ export default class LoginRegister extends Component {
       <div className="userArea">
         {Meteor.user() ?
           <div className="userLableGroup">
-            <div className="userLable">{Meteor.user().username}</div>
+            <div className="userLable"><Link to="/profile">{Meteor.user().username}</Link></div>
             <button onClick={() => Meteor.logout()}>logout</button>
           </div> 
           : 

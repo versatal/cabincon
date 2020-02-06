@@ -9,6 +9,7 @@ export default class RegisterUser extends Component {
       {
         username: this.username.value,
         password: this.password.value,
+        firstName: ""
       },
       error => {
         console.log(error);
