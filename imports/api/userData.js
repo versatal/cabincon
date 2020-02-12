@@ -10,7 +10,10 @@ if (Meteor.isServer) {
       return Meteor.users.find({ _id: this.userId }, {
         fields: { 
           isAdmin: 1,
-          firstName: 1 
+          email: 1,
+          firstName: 1,
+          avatar: 1,
+          forumSignature: 1
         }
       });
     } else {
@@ -26,6 +29,30 @@ Meteor.methods({
 
     Meteor.users.update(id, { 
                  $set: { firstName },
+    });
+  },
+  'userData.editAvatar'(id, avatar) {
+    check(id, String);
+    check(avatar, String);
+
+    Meteor.users.update(id, { 
+                 $set: { avatar },
+    });
+  },
+  'userData.editEmail'(id, email) {
+    check(id, String);
+    check(email, String);
+
+    Meteor.users.update(id, { 
+                 $set: { email },
+    });
+  },
+  'userData.editForumSignature'(id, forumSignature) {
+    check(id, String);
+    check(forumSignature, String);
+
+    Meteor.users.update(id, { 
+                 $set: { forumSignature },
     });
   },
 });

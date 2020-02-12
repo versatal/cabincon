@@ -25,6 +25,7 @@ import Setting from '../ui/Setting.js';
 import System from '../ui/System.js';
 import Podcast from '../ui/Podcast.js';
 import Profile from '../ui/Profile.js';
+import ChooseAvatar from '../ui/ChooseAvatar'
 
 const browserHistory = createBrowserHistory();
 
@@ -52,7 +53,8 @@ export const Routes = () => (
       <Route exact path="/setting" component={Setting}/> 
       <Route exact path="/system" component={System}/> 
       <Route exact path="/podcast" component={Podcast}/> 
-      <Route exact path="/profile" component={Profile}/> 
+      <Route exact path="/profile" component={Profile}/>
+      <Route exact path="/avatarchooser" component={ChooseAvatar}/>
       <Route component={NotFoundPage}/>
     </Switch>
   </Router>  

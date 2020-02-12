@@ -12,6 +12,8 @@ Meteor.startup(() => {
 });
 
 Accounts.onCreateUser((options,user) => {
+  user.email = "";
   user.firstName = "please change";
+  user.avatar = "/warrior.jpg";
   return user;
 });

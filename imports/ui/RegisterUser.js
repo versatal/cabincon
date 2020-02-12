@@ -8,8 +8,7 @@ export default class RegisterUser extends Component {
     Accounts.createUser(
       {
         username: this.username.value,
-        password: this.password.value,
-        firstName: ""
+        password: this.password.value
       },
       error => {
         console.log(error);
