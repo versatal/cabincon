@@ -77,7 +77,7 @@ class Game extends Component {
                   <button className="leave" onClick={this.leaveThisGame.bind(this)}>Leave</button>
                   : 
                   <button className="join" onClick={this.joinThisGame.bind(this)}>Join</button>
-              : <span>Waiting for a GM to claim</span>
+              : <span>Awaiting a GM to claim</span>
             }        
           </div>
        </React.Fragment>

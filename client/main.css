@@ -27,11 +27,9 @@ body {
 
 .container {
   max-width: 100%;
-  margin: 0 auto;
   min-height: 100%;
   background: cornsilk;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  box-sizing: border-box;
 }
 
 .siteEntry {
@@ -57,17 +55,20 @@ body {
 
 .navBar {
   width: 100%;
-  display:flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin: 10px auto;
+  padding: 5px;
+  border-bottom: 1px solid black;
   box-sizing: border-box;
 }
 
 .navBarLeft {
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 100%;
+}
+
+.navBarLeft h1 {
+  margin: auto 0;
+  height: 100%
 }
 
 .hamburgerMenu {
@@ -82,25 +83,31 @@ body {
 }
 
 .menu {
-  text-align: right;
   padding-right: 0px;
+  display: none;  
+  background-color: cornsilk;
+}
+
+.menuVisible {
   display: flex;
+  position: absolute;
+  z-index: 1;
 }
 
 .mainMenu {
-  display: flex;
+  border: 1px solid black;
   background: none;
-  height: 30px;
-  box-sizing: border-box;
   padding: 0px;
   padding-left: 10px;
   margin: 0px;
+
 }
 
 .mainMenuItem {
   padding: 0px;
-  margin: 0px 0px 0px 30px;
+  margin: 0px 0px 0px 0px;
   border: none;
+  box-sizing: border-box;
 }
 
 .menu-item {
@@ -144,8 +151,58 @@ body {
   font-size: 10px;
 }
 
+.userIcon {
+  width: 30px;
+  display: inline-block;
+}
+
+.mainMenuUser {
+  background: none;
+  padding: 0px;
+  padding-left: 0px;
+  margin: 0px;
+
+}
+
+.mainMenuUserItem {
+  padding: 0px;
+  margin: 0px 0px 0px 0px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.mainMenuUserItem:hover {
+  background-color: cornsilk;
+}
+
+.mainMenuUserItem:hover .subMenuUser {
+  margin: 0;
+  margin-left: 0;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  background-color: cornsilk;
+}
+
+.subMenuUser {
+  display: none;
+  margin: 0;
+  padding: 0;
+  right: 0;
+}
+
+.subMenuUserItem {
+  margin: 0 auto;
+  padding: 5px 5px;
+  text-decoration: none;
+  cursor: pointer;
+  width: fit-content;
+  text-align: left;
+  font-size: 10px;
+}
+
 .gameContainer {
-  max-width: 80%;
+  width: 100%;
   margin: 0 auto;
   min-height: 100%;
   background: cornsilk;
@@ -165,13 +222,13 @@ body {
 }
 
 .gameBlockLeft {
-  width: 50%;
+  width: 40%;
   text-align: right;
   margin-right: 10px;
 }
 
 .gameBlockRight {
-  width: 50%;
+  width: 60%;
   display: flex;
   text-align: left;
 }
@@ -196,6 +253,7 @@ body {
   border-bottom: 1px solid black;
   background-color: lightgray;
   font-size: 16px;
+  width: 75%;
 }
 
 .gameInput:disabled {
@@ -208,7 +266,7 @@ body {
   border-bottom: 1px solid black;
   background-color: lightgray;
   font-size: 16px;
-  width: 41.5%;
+  width: 75%;
 }
 
 .gameSystemInput:disabled {
@@ -217,7 +275,7 @@ body {
 }
 
 .longDescription textarea {
-  width: 75%;
+  width: 95%;
   height: 400px;
   margin: 0 auto;
   background-color: lightgray;
@@ -334,7 +392,7 @@ ul {
 .join {
   font-weight: bold;
   background: none;
-  font-size: 20px;
+  font-size: 1em;
   border: none;
   background-color: darkred;
   text-decoration: none;
@@ -346,7 +404,7 @@ ul {
 .leave {
   font-weight: bold;
   background: none;
-  font-size: 20px;
+  font-size: 1em;
   border: none;
   background-color: darkred;
   text-decoration: none;
@@ -358,18 +416,19 @@ ul {
 .colHeaders {
   text-align: center;
   font-size: 1.5em;
-  color: dimgray
+  color: dimgray;
+  display: none;
 }
 
 .gameLink {
-  font-size: 18px;
+  font-size: 1em;
   text-decoration: none;
   color: black;
   margin-top: 15px;
 }
 
 .gameMaster {
-  font-size: 20px;
+  font-size: 1em;
   padding: 0;
   margin-right: 5px;
 }
@@ -383,7 +442,7 @@ ul {
 .btnClaim {
   font-weight: bold;
   background: none;
-  font-size: 20px;
+  font-size: 1em;
   border: none;
   background-color: darkred;
   text-decoration: none;
@@ -394,18 +453,20 @@ ul {
 
 .gameItem {
   box-sizing: border-box;
-  height: 32px;
+  min-height: 44px;
+  height: fit-content;
   border: 1px solid darkred;
   padding: 5px;
 }
 
 .gameDetailsGroup {
-  width: 60%;
+  width: 100%;
   margin:0 auto;
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
   border: 1px solid darkred;
+  box-sizing: border-box;
 }
 
 .gameDetailsHeader {
@@ -461,15 +522,15 @@ header .hide-completed {
 
 .Clock-title {
   display: block;
-  font-size: 3em;
+  font-size: 2em;
   color: darkred;
 }
 
 .Clock-days, .Clock-hours, .Clock-minutes, .Clock-seconds {
   margin: 10px 0 0 0;
-  display: inline;
+  display: block;
   margin: 15px;
-  font-size: 6em;
+  font-size: 4em;
   color: darkred;
 }
 
@@ -914,9 +975,11 @@ header .hide-completed {
 }
 
 .blogMainHeader {
-  margin: 0px 10px;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .blogMainHeader h1 {
@@ -935,14 +998,14 @@ header .hide-completed {
 }
 
 .blogAndForum {
-  margin: 10px 10px 0px 10px;
-  display: flex;
-  padding: 10px 10px 0px 10px;
+  margin: 0;  
+  padding-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .blogGroup {
-  width: 75%;
-  margin-right: 20px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -960,7 +1023,7 @@ header .hide-completed {
 }
 
 .blogItem {
-  width: 75%;
+  width: 100%;
   padding-bottom: 10px;
   margin: 10px;
 }
@@ -992,6 +1055,7 @@ header .hide-completed {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .blogPreviewHeader {
@@ -1219,7 +1283,7 @@ header .hide-completed {
   border: 1px solid darkred;
   width: 25%;
   margin-bottom: 15px;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -1263,8 +1327,6 @@ header .hide-completed {
 }
 
 .userArea {
-  padding: 0;
-  margin: 0px;
   cursor: pointer;
 }
 
@@ -1358,25 +1420,24 @@ header .hide-completed {
 
 .profileHeader {
   width: 100%;
-  text-align: center;
-  margin: 0;
 }
 
 .profileHeader h1{
-  font-size: 36px;
+  width: 100%;
+  font-size: 24px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .profileContent {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   padding: 0 10px;
   box-sizing: border-box;
   margin-top: 20px;
 }
 
 .userInfo {
-  width: 49%;
+  width: 100%;
   border: 1px solid darkred;
   box-sizing: border-box;
   display: flex;
@@ -1384,7 +1445,7 @@ header .hide-completed {
 }
 
 .userContent {
-  width: 49%;
+  width: 100%;
 }
 
 .userInfo h1{
@@ -1577,21 +1638,21 @@ header .hide-completed {
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 700px) {
 
   .profileContent {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
   }
   
   .userInfo {
-    width: 100%;
+    width: 49%;
   }
   
   .userContent {
-    width: 100%;
+    width: 49%;
   }
-
 
 }
 
@@ -1599,10 +1660,20 @@ header .hide-completed {
 
   .container {
     max-width: 80%;
+    margin: 0 auto;
   }
 
   .navBar {
     max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    border: none;
+  }
+
+  .userIcon {
+    margin-top: 2px;
+    width: 50px;
   }
 
   .hamburgerMenu {
@@ -1616,5 +1687,76 @@ header .hide-completed {
 
   .markdInst {
     width: 45%;
+  }
+
+  .hamburgerMenu {
+    display: none;
+  }
+
+  .navBarLeft {
+    width: 60%;
+  }
+
+  .navBarLeft h1 {
+    height: auto;
+    font-size: 2.5em;
+  }
+
+  .menu {
+    display: block;
+    background: none;
+  }
+
+  .mainMenu {
+    display: flex;
+    justify-items: flex-end;
+    font-size: 20px;
+    margin-top: 5px;
+    border: none;
+  }
+
+  .mainMenuItem {
+    width: auto;
+    margin-left: 20px;
+  }
+
+  .menu-item {
+    color: black;
+  }
+
+  .colHeaders {
+    display: flex;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+
+  .gameItem {
+    font-size: 22px;
+  }
+
+  .blogArchive {
+    display: flex;
+    width: 20%;
+    margin-right: 10px;
+  }
+
+  .blogAndForum {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .blogGroup {
+    width: 75%;
+    margin-left: 10px;
+  }
+
+  .Clock-days, .Clock-hours, .Clock-minutes, .Clock-seconds {
+    display: inline-block;
+    margin: 15px;
+    font-size: 6em;
+  }
+
+  .Clock-title {
+    font-size: 3em;
   }
 }

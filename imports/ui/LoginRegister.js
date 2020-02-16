@@ -29,8 +29,15 @@ export default class LoginRegister extends Component {
       <div className="userArea">
         {Meteor.user() ?
           <div className="userLableGroup">
-            <div className="userLable"><Link to="/profile">{Meteor.user().username}</Link></div>
-            <button onClick={() => Meteor.logout()}>logout</button>
+            <ul className="mainMenuUser">
+              <li className="mainMenuUserItem">
+                <img className="userIcon" src="/user.png"></img>
+                <ul className="subMenuUser">
+                  <li className="subMenuUserItem"><div className="userLable"><Link to="/profile">{Meteor.user().username}</Link></div></li>
+                  <li className="subMenuUserItem"><button onClick={() => Meteor.logout()}>logout</button></li>
+                </ul>
+              </li>
+            </ul>                        
           </div> 
           : 
           <div className="loginRegisterGroup">

@@ -102,7 +102,7 @@ class GameDetails extends Component {
                   </div>
                 </div>
                 <div className="gameBlock">
-                  <div className="gameBlockLeft"><label className="gameLabel">Game Description: </label></div>
+                  <div className="gameBlockLeft"><label className="gameLabel">Description: </label></div>
                   <div className="gameBlockRight">
                     <input className="gameInput" type="text" disabled={this.state.disableDescription} ref="description" defaultValue={game.description}></input>
                     {currentUser && game.gameMaster == currentUser.username && 
@@ -165,7 +165,7 @@ class GameDetails extends Component {
                 </div>
                 <div>
                   <div className="gameBlock">
-                    <div className="gameBlockLeft"><span className="gameLabel">Long Description:</span></div>
+                    <div className="gameBlockLeft"><span className="gameLabel">Details:</span></div>
                     {currentUser && game.gameMaster == currentUser.username && 
                       <div className="gameBlockRight">
                         <input className="gameButton" type="button" value="edit" onClick={this.handleEditDetails.bind(this)}/>
