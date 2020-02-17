@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 body {
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-image: url("/Parchment-Light2.jpg");
   background-color: #d6cca9;
   background-position: center; 
@@ -55,6 +55,7 @@ body {
 
 .navBar {
   width: 100%;
+  font-family: fantasy;  
   padding: 5px;
   border-bottom: 1px solid black;
   box-sizing: border-box;
@@ -208,6 +209,12 @@ body {
   background: cornsilk;
   text-align: center;
   padding: 10px 0px;
+}
+
+.verticalText {
+  font-weight: bold;
+  font-size: 12px;
+  margin: auto;
 }
 
 .gameContainer h1 {
@@ -415,9 +422,8 @@ ul {
 
 .colHeaders {
   text-align: center;
-  font-size: 1.5em;
-  color: dimgray;
-  display: none;
+  font-size: .9em;
+  display: flex;
 }
 
 .gameLink {
@@ -455,9 +461,25 @@ ul {
   box-sizing: border-box;
   min-height: 44px;
   height: fit-content;
-  border: 1px solid darkred;
   padding: 5px;
 }
+
+.gameItemEven {
+  box-sizing: border-box;
+  min-height: 44px;
+  height: fit-content;
+  padding: 5px;
+  background-color: lightgray;
+}
+
+.gameItemOne {
+  box-sizing: border-box;
+  min-height: 44px;
+  height: fit-content;
+  padding: 5px;
+  margin-top: 10px;
+}
+
 
 .gameDetailsGroup {
   width: 100%;
@@ -515,7 +537,7 @@ header .hide-completed {
 }
 
 .Clock {
-  margin-top: 20%;
+  margin-top: 10%;
   text-align: center;
   border: 1px solid darkred;
 }
@@ -1654,6 +1676,11 @@ header .hide-completed {
     width: 49%;
   }
 
+  .verticalText {
+    font-weight: bold;
+    font-size: 18px;
+    margin: auto;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1687,6 +1714,15 @@ header .hide-completed {
 
   .markdInst {
     width: 45%;
+  }
+
+  header {
+    padding-top: 20px;
+    font-size: 42px;  
+  }
+
+  .navBar {
+    padding: 20px 0px;
   }
 
   .hamburgerMenu {
@@ -1726,13 +1762,15 @@ header .hide-completed {
 
   .colHeaders {
     display: flex;
-    margin: 0 auto;
-    font-size: 24px;
+    margin: 9px auto;
+    font-size: 20px;
   }
 
-  .gameItem {
+  .gameItem, .gameItemOne, .gameItemEven {
     font-size: 22px;
+    text-align: center;
   }
+
 
   .blogArchive {
     display: flex;

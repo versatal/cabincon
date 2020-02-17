@@ -11,17 +11,67 @@ import PropTypes from 'prop-types';
 
 const GridLayout = styled.div`
 display:grid;
-grid-template-columns: 20% 20% 20% 20% 20%;
+grid-template-columns: 5% 19% 19% 19% 19% 19%;
 padding: 10px 10px 0px 10px;
 `;
 
 const StyledDateHeader = styled.div`
-  grid-column: 1 / span 5;
+  grid-column: 1 / span 6;
   background-color: chocolate;
   height: 40px;
   text-align: center;
   padding: 0px;
   margin: 10px 0px 0px 0px;
+  display: flex;
+  padding-left: 3%;
+`;
+
+const StyledDayOneHeader = styled.div`
+  grid-row: 2 / span 4;
+  background-color: #753916;
+  color: beige;
+  text-align: center;
+  padding: 0px;
+  margin-top: 10px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  display: flex;
+`;
+
+const StyledDayTwoHeader = styled.div`
+  grid-row: 6 / span 4;
+  background-color: #753916;
+  color: beige;
+  text-align: center;
+  padding: 0px;
+  margin-top: 10px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  display: flex;
+`;
+
+const StyledDayThreeHeader = styled.div`
+  grid-row: 10 / span 4;
+  background-color: #753916;
+  color: beige;
+  text-align: center;
+  padding: 0px;
+  margin-top: 10px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  display: flex;
+`;
+
+const StyledDayFourHeader = styled.div`
+  grid-row: 14 / span 3;
+  background-color: #753916;
+  color: beige;
+  text-align: center;
+  padding: 0px;
+  margin-top: 10px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  display: flex;
 `;
 
 class Schedule extends Component {
@@ -59,19 +109,21 @@ class Schedule extends Component {
         <div className="container">
           <header>CabinCon Schedule</header>
           <GridLayout>
-            <div className="colHeaders">Game Title</div>
-            <div className="colHeaders">Game Description</div>
-            <div className="colHeaders">Game System</div>
-            <div className="colHeaders">Game Master</div>
-            <div className="colHeaders">Players</div>
-            <StyledDateHeader><p className="gameDayHeader">Thursday</p></StyledDateHeader>
+            <StyledDateHeader>
+              <div className="colHeaders">Game Title</div>
+              <div className="colHeaders">Game Description</div>
+              <div className="colHeaders">Game System</div>
+              <div className="colHeaders">Game Master</div>
+              <div className="colHeaders">Players</div>            
+            </StyledDateHeader>
+            <StyledDayOneHeader><span className="verticalText">THURSDAY</span></StyledDayOneHeader>
             {this.renderGames(1, 3, thursdayCount + 3)}
-            <StyledDateHeader><p className="gameDayHeader">Friday</p></StyledDateHeader>
+            <StyledDayTwoHeader><span className="verticalText">FRIDAY</span></StyledDayTwoHeader>
             {this.renderGames(2, thursdayCount + 4, thursdayCount + 4 + fridayCount)}
-            <StyledDateHeader><p className="gameDayHeader">Saturday</p></StyledDateHeader>
+            <StyledDayThreeHeader><span className="verticalText">SATURDAY</span></StyledDayThreeHeader>
             {this.renderGames(3, thursdayCount + 5 + fridayCount, thursdayCount + 5 + fridayCount + saturdayCount)}
-            <StyledDateHeader><p className="gameDayHeader">Sunday</p></StyledDateHeader>
-            {this.renderGames(4, thursdayCount + 6 + fridayCount + saturdayCount, thursdayCount + 6 + fridayCount + fridayCount + saturdayCount + sundayCount)}
+            <StyledDayFourHeader><span className="verticalText">SUNDAY</span></StyledDayFourHeader>
+            {this.renderGames(4, thursdayCount + 6 + fridayCount + saturdayCount, thursdayCount + 6 + fridayCount + saturdayCount + sundayCount)}
           </GridLayout>
           {
             currentUser ?

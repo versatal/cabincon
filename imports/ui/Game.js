@@ -36,40 +36,46 @@ class Game extends Component {
   }
 
   render() {
-    const { currentUser, game } = this.props;
+    const { currentUser, gameSlot, game } = this.props;
     const gameidString = "/gamedetails:" + game._id;
+    let gameItemClass = "gameItem";
+    if (gameSlot % 2 == 0) {
+      gameItemClass = "gameItemEven";
+    }  
 
     if (currentUser) {
       return (
         <React.Fragment>
 
-          <div className="gameItem">
+          <div className={gameSlot == 1 ? "gameItemOne" : gameItemClass}>
             {currentUser.isAdmin && <button className="delete" onClick={this.deleteThisGame.bind(this)}>&times;</button>}
             <Link to={gameidString} className="gameLink">{game.title}</Link>
           </div>
           
-          <div className="gameItem"><Link to={gameidString} className="gameLink">{game.description}</Link></div>
+          <div className={gameSlot == 1 ? "gameItemOne" : gameItemClass}>
+            <Link to={gameidString} className="gameLink">{game.description}</Link>
+          </div>
           
-          <div className="gameItem">
+          <div className={gameSlot == 1 ? "gameItemOne" : gameItemClass}>
             {game.gameSystem ? 
               <span><Link to={gameidString} className="gameLink">{game.gameSystem}</Link></span> 
               : 
-              <span><Link to={gameidString} className="gameLink">Game System</Link></span>}
+              <span><Link to={gameidString} className="gameLink">GM Needed</Link></span>}
           </div>
 
           {game.gameMaster ? 
             game.gameMaster == currentUser.username ? 
-              <div className="gameItem">
+            <div className={gameSlot == 1 ? "gameItemOne" : gameItemClass}>
                 <span className="gameMaster">{game.gameMaster}</span>
                 <button className="btnClaim" onClick={this.unclaimThisGame.bind(this)}>Unclaim</button>
               </div> 
               : 
-              <div className="gameItem"><span className="gameMaster">{game.gameMaster}</span></div>
+              <div className={gameSlot == 1 ? "gameItemOne" : gameItemClass}><span className="gameMaster">{game.gameMaster}</span></div>
             : 
-            <div className="gameItem"><button className="btnClaim" onClick={this.claimThisGame.bind(this)}>Claim</button></div>
+            <div className={gameSlot == 1 ? "gameItemOne" : gameItemClass}><button className="btnClaim" onClick={this.claimThisGame.bind(this)}>Claim</button></div>
           }
 
-          <div className="gameItem">
+          <div className={gameSlot == 1 ? "gameItemOne" : gameItemClass}>
             {game.players.length > 0 && <span className="gamePlayers">{game.players.join(', ')}</span>}
             {
               game.gameMaster.length > 0 ? 
@@ -77,7 +83,7 @@ class Game extends Component {
                   <button className="leave" onClick={this.leaveThisGame.bind(this)}>Leave</button>
                   : 
                   <button className="join" onClick={this.joinThisGame.bind(this)}>Join</button>
-              : <span>Awaiting a GM to claim</span>
+              : <span>GM Needed</span>
             }        
           </div>
        </React.Fragment>
@@ -100,4 +106,5 @@ export default withTracker(() => {
 Game.propTypes = {
   game: PropTypes.object,
   currentUser: PropTypes.object,
+  gameSlot: PropTypes.number
 };

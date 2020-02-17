@@ -1,7 +1,4 @@
-/* eslint-disable react/no-find-dom-node */
-/* eslint-disable react/no-string-refs */
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { Posts } from '../api/posts.js';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -13,16 +10,16 @@ class SubTopic extends Component {
 
   handleSubmitPost(event){
     event.preventDefault();
-    const text = ReactDOM.findDOMNode(this.refs.postBody).value.trim();
+    const text = this.postBody.value.trim();
     const type = "post";
-    const title = ReactDOM.findDOMNode(this.refs.postTitle).value.trim();
+    const title = this.postTitle.value.trim();
     const subTopicOf = "";
     const postedIn = this.props.topic._id;
 
     Meteor.call("posts.insert", text, type, title, subTopicOf, postedIn)
 
-    ReactDOM.findDOMNode(this.refs.postBody).value = 'body';
-    ReactDOM.findDOMNode(this.refs.postTitle).value = 'title';
+    this.postTitle.value = 'title';
+    this.postBody.value = 'body - may use markdown';
 
   }
 
@@ -75,8 +72,8 @@ class SubTopic extends Component {
           <div>
             <form className="topicalPostAdd" onSubmit={this.handleSubmitPost.bind(this)} >
               <span>Post your response:</span>
-              <input className="topicalPostAddTitle" id="postTitle" type="text" ref="postTitle" defaultValue="title" />
-              <textarea className="topicalPostAddBody" id="postBody" ref="postBody" defaultValue="body - may use markdown" />
+              <input className="topicalPostAddTitle" id="postTitle" type="text" ref={input => (this.postTitle = input)} defaultValue="title" />
+              <textarea className="topicalPostAddBody" id="postBody" ref={textarea => (this.postBody = textarea)} defaultValue="body - may use markdown" />
               <input type="submit" value="submit" />
             </form>
           </div>
@@ -84,8 +81,8 @@ class SubTopic extends Component {
             <h4>You may use markdown to format your post:</h4>
           </div>
           <div className="markedArea">
-            <div className="markdInst"><textarea>{markedownInstructionsOne}</textarea></div>
-            <div className="markdInst"><textarea>{markedownInstructionsTwo}</textarea></div>
+            <div className="markdInst"><textarea defaultValue={markedownInstructionsOne} readOnly></textarea></div>
+            <div className="markdInst"><textarea defaultValue={markedownInstructionsTwo} readOnly></textarea></div>
           </div>
         </div>
       )  
@@ -111,6 +108,6 @@ export default withTracker(({ location }) => {
 
 SubTopic.propTypes = {
   currentUser: PropTypes.object,
-  posts: PropTypes.object,
+  posts: PropTypes.array,
   topic: PropTypes.object,
 };
