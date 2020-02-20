@@ -46,7 +46,6 @@ class Profile extends Component {
               <div className="userItem">
                 <button className="profileActionButton" onClick={this.showModal.bind(this)}>Change Password</button>
               </div>  
-              <div className="userItem"><button className="profileActionButton">Delete Account</button></div>  
               <EditFirstName />
               <div className="userItem userAvatar">
                 <div className="avatarHeader"><span>Your avatar: </span><Link to="/avatarchooser">change</Link></div>

@@ -14,8 +14,6 @@ class Modal extends Component {
     }
   }
 
-
-
   handlePasswordChange(e) {
     e.preventDefault();
     this.setState({

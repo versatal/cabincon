@@ -122,21 +122,7 @@ body {
 
 }
 
-.mainMenuItem:hover {
-  background-color: cornsilk;
-}
-
-.mainMenuItem:hover .subMenu {
-  margin: 0;
-  margin-left: 0;
-  display: block;
-  position: absolute;
-  z-index: 1;
-  background-color: cornsilk;
-}
-
 .subMenu {
-  display: none;
   margin: 0;
   padding: 0;
   left: 0;
@@ -153,7 +139,7 @@ body {
 }
 
 .userIcon {
-  width: 30px;
+  width: 20px;
   display: inline-block;
 }
 
@@ -162,7 +148,6 @@ body {
   padding: 0px;
   padding-left: 0px;
   margin: 0px;
-
 }
 
 .mainMenuUserItem {
@@ -199,6 +184,10 @@ body {
   cursor: pointer;
   width: fit-content;
   text-align: left;
+  box-sizing: border-box;
+}
+
+.subMenuUserLink {
   font-size: 10px;
 }
 
@@ -356,11 +345,8 @@ form {
 
 .signInMessage {
   text-align: center;
-  height: 500px;
-}
-
-.signInMessage h1 {
-  margin: 225px;
+  margin: 0 auto;
+  margin-top: 45%;
 }
  
 .new-game input {
@@ -1358,11 +1344,6 @@ header .hide-completed {
   padding: 0px 5px;
 }
 
-.userLable {
-  padding-top: 3px;
-  margin-right: 5px;
-}
-
 .userLableGroup button {
   border-radius: 5px;
   background-color: burlywood;
@@ -1376,14 +1357,15 @@ header .hide-completed {
 }
 
 .loginRegisterGroupLabel {
-  height: 18px;
-  background-color: burlywood;
+  height: fit-content;
   color: whitesmoke;
   font-size: 16px;
   padding: 3px;
   margin-right: 5px;
-  border: 1px solid lightslategray;
-  border-radius: 5px;
+}
+
+.loginRegisterGroupLabel img {
+  width: 30px;
 }
 .loginRegister {
   height: 24px;
@@ -1394,25 +1376,29 @@ header .hide-completed {
 
 .loginForm {
   box-sizing: border-box;
-  margin: 0px 5px 0px 0px;
-  height: 22px;
+  margin: 10px 0px 0px 0px;
+  height: fit-content;
+  box-sizing: border-box;
 }
 .loginForm form {
   margin: 0;
-  height: 100%;
-  display: flex;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 .loginForm input {
-  height: 100%;
   font-size: 12px;
   padding: 0px 3px;
-  margin: 0px 3px 0px 0px;
+  margin: 0px 0px 5px 0px;
   width: 150px;
-  border: none;
-  border-radius: 5px;
   background-color: whitesmoke;
+}
+
+.loginRegisterModalControls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .toggleLabel {
@@ -1660,6 +1646,10 @@ header .hide-completed {
   font-weight: bold;
 }
 
+.passwordMessage {
+  color: red;
+}
+
 @media (min-width: 700px) {
 
   .profileContent {
@@ -1681,6 +1671,31 @@ header .hide-completed {
     font-size: 18px;
     margin: auto;
   }
+
+  .loginRegisterGroupLabel img {
+    width: 45px;
+  }
+
+  .signInMessage {
+    margin-top: 20%;
+  }
+
+  .mainMenuItem:hover {
+    background-color: cornsilk;
+  }
+  
+  .mainMenuItem:hover .subMenu {
+    margin: 0;
+    margin-left: 0;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background-color: cornsilk;
+  }
+  
+  .subMenu {
+    display: none;
+  }  
 }
 
 @media (min-width: 1200px) {
@@ -1700,7 +1715,7 @@ header .hide-completed {
 
   .userIcon {
     margin-top: 2px;
-    width: 50px;
+    width: 30px;
   }
 
   .hamburgerMenu {
@@ -1757,6 +1772,20 @@ header .hide-completed {
   }
 
   .menu-item {
+    color: black;
+  }
+
+  .subMenuUser {
+    width: 100px;
+  }
+
+  .subMenuUserItem {
+    box-sizing: border-box;
+  }
+
+  .subMenuUserLink {
+    font-size: 18px;
+    text-decoration: none;
     color: black;
   }
 
