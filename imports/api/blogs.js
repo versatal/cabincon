@@ -11,10 +11,11 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'blogs.insert'(title, body, ownerId) {
+  'blogs.insert'(title, body, ownerId, category) {
     check(title, String);
     check(body, String);
     check(ownerId, String);
+    check(category, String)
  
     // Make sure the user is logged in before inserting a game
     if (! this.userId) {
@@ -25,7 +26,8 @@ Meteor.methods({
       title,
       body,
       createdAt: new Date(),
-      ownerId
+      ownerId,
+      category
     });
   },
 
@@ -35,13 +37,14 @@ Meteor.methods({
     Blogs.remove(blogId);
   },
 
-  'blogs.update'(blogId, title, body) {
+  'blogs.update'(blogId, title, body, category) {
     check(blogId, String);
     check(title, String);
     check(body, String);
+    check(category);
 
     Blogs.update(blogId, { 
-                 $set: { title, body },
+                 $set: { title, body, category },
     });
   },
 

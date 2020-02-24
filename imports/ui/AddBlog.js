@@ -24,8 +24,9 @@ class AddBlog extends Component {
     const title = ReactDOM.findDOMNode(this.refs.blogTitle).value.trim();
     const body = ReactDOM.findDOMNode(this.refs.blogBody).value.trim();
     const ownerId = this.props.currentUser._id;
+    const category = ReactDOM.findDOMNode(this.refs.blogCategory).value.trim();
 
-    Meteor.call("blogs.insert", title, body, ownerId);
+    Meteor.call("blogs.insert", title, body, ownerId, category);
 
     this.props.history.push("/bloglist");
   }
@@ -55,6 +56,12 @@ class AddBlog extends Component {
               <form className="blogEditorGroup" onSubmit={this.handleAddBlog.bind(this)} >
                 <input className="blogEditorTitle" type="text" ref="blogTitle" onChange={this.titleTextHandler.bind(this)} defaultValue={this.state.title} />
                 <textarea className="blogEditorBody" ref="blogBody" onChange={this.bodyTextHandler.bind(this)} defaultValue={this.state.body}/>
+                <h4>Choose a category</h4>
+                <select className="blogEditorCategory" ref="blogCategory" >
+                  <option value="general">general</option>
+                  <option value="rpg">rpg</option>
+                  <option value="podcast">podcast</option>
+                </select>
                 <input type="submit" value="submit" />
               </form>          
             </div>

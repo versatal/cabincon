@@ -40,7 +40,7 @@ export default withTracker(() => {
 
   return {
     currentUser: Meteor.user(),
-    blogs: Blogs.find({}).fetch(),
+    blogs: Blogs.find({}, {sort: {createdAt: -1}}).fetch(),
   };
 })(BlogList);
 

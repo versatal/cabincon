@@ -166,7 +166,7 @@ body {
   margin-left: 0;
   display: block;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   background-color: cornsilk;
 }
 
@@ -296,11 +296,47 @@ body {
   border: none;
 }
 
-header {
+.scheduleHeader {
+  background-image: url("/tabletop.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+.overlayContent {
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 32px;
-  font-weight: bold;
+  color: cornsilk;
+  font-family: fantasy;
+  font-size: 2em;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.overlayContent .lineTwo {
+  font-size: .8em;
+}
+
+.overlayContent .lineThree {
+  font-size: .5em;
 }
 
 footer {
@@ -448,6 +484,7 @@ ul {
   min-height: 44px;
   height: fit-content;
   padding: 5px;
+  background-color: cornsilk;
 }
 
 .gameItemEven {
@@ -464,22 +501,14 @@ ul {
   height: fit-content;
   padding: 5px;
   margin-top: 10px;
-}
-
-
-.gameDetailsGroup {
-  width: 100%;
-  margin:0 auto;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-  border: 1px solid darkred;
-  box-sizing: border-box;
+  background-color: cornsilk;
 }
 
 .gameDetailsHeader {
   background-color: chocolate;
-  height: 40px;
+  height: fit-content;
+  text-align: center;
+  font-family: fantasy;
 }
 
 .gameDetailsHeader h1 {
@@ -487,41 +516,71 @@ ul {
   padding: 8px
 }
 
+.gameDetailsContent {
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.gameDetailsContentForm {
+  background-color: cornsilk;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 10px 0px;
+  border: 1px solid darkred;
+  margin-bottom: 20px;
+}
+
+.gameResources {
+  position: relative;
+  background-color: cornsilk;
+  width: 100%;
+  border: 1px solid darkred;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.gameResourcesOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 2;
+  left: 0;
+  top: 0;
+}
+
+.gameResourcesOverlay span{
+  width: fit-content;
+  color: white;
+  font-size: 38px;
+  font-family: fantasy;  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-25%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.gameResources h3, h4 {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 0
+}
+
+.gameResources h3 {
+  text-align: center;
+  font-size: 26px;
+}
 
 li {
   position: relative;
   list-style: none;
-  padding: 10px;
-  border-bottom: #eee solid 1px;
 }
  
-li .text {
-  margin-left: 10px;
-  margin-right: 10px;
-}
- 
-li.checked {
-  color: #888;
-}
- 
-li.checked .text {
-  text-decoration: line-through;
-}
- 
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
- 
-header .hide-completed {
-  float: right;
-}
- 
-.toggle-private {
-  margin-left: 5px;
-}
-
 .Clock {
   margin-top: 10%;
   text-align: center;
@@ -620,10 +679,12 @@ header .hide-completed {
 
 .forumTopicList {
   padding-bottom: 10px;
+  background-color: cornsilk;
 }
 
 .forumAdmin {
   padding: 10px 10px;
+  background-color: cornsilk;
 }
 
 .topicAdd, .subTopicAdd {
@@ -1064,6 +1125,7 @@ header .hide-completed {
   flex-direction: column;
   margin-bottom: 20px;
   box-sizing: border-box;
+  background-color: cornsilk;
 }
 
 .blogPreviewHeader {
@@ -1109,9 +1171,10 @@ header .hide-completed {
 .blogBody {
   padding: 0px 10px;
 }
+
 .editorPreviewGroup {
   display: flex;
-  padding: 0px 10px;
+  padding: 0px 10px 10px 10px;
 }
 
 .blogEditorHeader {
@@ -1124,7 +1187,6 @@ header .hide-completed {
 }
 
 .editorGroupHeader {
-  border: 1px solid darkred;
   background-color: chocolate;
   height: 40px;
   text-align: center;  
@@ -1137,9 +1199,10 @@ header .hide-completed {
 
 .blogEditor {
   border: 1px solid darkred;
-  margin: 0;
+  margin: 0px;
   width: 50%;
   padding-bottom: 15px;
+  background-color: cornsilk;
 }
 
 .blogEditorGroup {
@@ -1157,13 +1220,13 @@ header .hide-completed {
   width: 100%;
   height: 500px;
   box-sizing: border-box;
-
 }
 
 .blogEditPreview {
   margin-left: 20px;
   width: 50%;
   border: 1px solid darkred;
+  background-color: cornsilk;
 }
 
 .blogEditTitlePreview {
@@ -1174,7 +1237,7 @@ header .hide-completed {
 
 .newBlogPreview {
   width: 100%;
-  min-height: 500px;
+  height: 630px;
   box-sizing: border-box;
   padding: 10px; 
 }
@@ -1293,6 +1356,7 @@ header .hide-completed {
   margin-bottom: 15px;
   display: none;
   flex-direction: column;
+  background-color: cornsilk;
 }
 
 .blogArchiveHeader {
@@ -1689,13 +1753,34 @@ header .hide-completed {
     margin-left: 0;
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     background-color: cornsilk;
   }
   
   .subMenu {
     display: none;
-  }  
+  }
+
+  .gameDetailsHeader {
+    font-size: 28px;
+  }
+
+  .gameDetailsContent {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .gameDetailsContentForm {
+    width: 49%;
+    margin: 0;
+  }
+
+  .gameResources {
+    width: 49%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1703,6 +1788,7 @@ header .hide-completed {
   .container {
     max-width: 80%;
     margin: 0 auto;
+    background-color: #5c5039;
   }
 
   .navBar {
@@ -1826,4 +1912,9 @@ header .hide-completed {
   .Clock-title {
     font-size: 3em;
   }
+
+  .scheduleHeader {
+    height: 300px;
+  }
+  
 }

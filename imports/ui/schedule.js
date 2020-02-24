@@ -12,7 +12,8 @@ import PropTypes from 'prop-types';
 const GridLayout = styled.div`
 display:grid;
 grid-template-columns: 5% 19% 19% 19% 19% 19%;
-padding: 10px 10px 0px 10px;
+padding: 0px 10px 10px 10px;
+background-color: #5c5039;
 `;
 
 const StyledDateHeader = styled.div`
@@ -107,7 +108,15 @@ class Schedule extends Component {
     if (currentUser) {
       return (
         <div className="container">
-          <header>CabinCon Schedule</header>
+          <header className="scheduleHeader">
+            <div className="overlay">
+              <div className="overlayContent">
+                <span className="lineOne">CabinCon 2020</span>
+                <span className="lineTwo">May 14 - May 17</span>
+                <span className="lineThree">Truely The Best 4 Days In Gaming</span>
+              </div>
+            </div>
+          </header>
           <GridLayout>
             <StyledDateHeader>
               <div className="colHeaders">Game Title</div>

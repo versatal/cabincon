@@ -86,12 +86,12 @@ class GameDetails extends Component {
     const { game, currentUser } = this.props;
     if (game) {
       return (
-        <div className="gameContainer">
-          <div className="gameDetailsGroup">
-            <div className="gameDetailsHeader" >
-              <h1>Game Details - {game.title}</h1>
-            </div>
-              <form onSubmit={this.handleSubmit.bind(this)}>
+        <div className="container">
+          <div className="gameDetailsHeader" >
+            <h1>Game Details - {game.title}</h1>
+          </div>
+          <div className="gameDetailsContent">
+            <form className="gameDetailsContentForm" onSubmit={this.handleSubmit.bind(this)}>
                 <div className="gameBlock">
                   <div className="gameBlockLeft"><label className="gameLabel">Game Title: </label></div>
                   <div className="gameBlockRight">
@@ -176,6 +176,14 @@ class GameDetails extends Component {
                 </div>              
                 {currentUser && game.gameMaster == currentUser.username && <input className="gameSubmit" type="submit" value="submit"></input>}
               </form>
+            <div className="gameResources">
+              <div className="gameResourcesOverlay">
+                <span>Content Under Construction</span>
+              </div>
+              <h3>Game Resources</h3>
+              <div className="gamePosts"><h4>Forum Posts</h4></div>
+              <div className="gameDocumentation"><h4>Documentation</h4></div>
+            </div>
           </div>
         </div>
       )  

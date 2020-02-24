@@ -36,7 +36,7 @@ export default withTracker(() => {
   Meteor.subscribe('blogs');
 
   return {
-    blogs: Blogs.find({}).fetch(),
+    blogs: Blogs.find({}, {sort: {createdAt: -1}}).fetch(),
   };
 })(BlogArchive);
 

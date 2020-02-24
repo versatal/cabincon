@@ -36,9 +36,9 @@ class Navigation extends Component {
           <ul className="mainMenu">
 {/*         <li className="mainMenuItem"><Link className="menu-item" to="/news">News</Link></li>
             <li className="mainMenuItem"><Link className="menu-item" to="/setting">Setting</Link></li>
-            <li className="mainMenuItem"><Link className="menu-item" to="/system">System</Link></li>
+            <li className="mainMenuItem"><Link className="menu-item" to="/system">System</Link></li> */}
             <li className="mainMenuItem"><Link className="menu-item" to="/podcast">Podcast</Link></li>
-    */}     <li className="mainMenuItem"><Link className="menu-item" to="#">CabinCon</Link>
+            <li className="mainMenuItem"><Link className="menu-item" to="#">CabinCon</Link>
               <ul className="subMenu">
                 <li className="subMenuItem"><Link className="menu-item" to="/">Countdown</Link></li>      
                 <li className="subMenuItem"><Link className="menu-item" to="/schedule">Schedule</Link></li>      
