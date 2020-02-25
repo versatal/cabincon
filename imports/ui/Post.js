@@ -96,12 +96,14 @@ class Post extends Component {
               <input type="submit" value="submit" />
             </form>          
           </div>
-          <div className="markedHeading">
-            <h4>You may use markdown to format your post:</h4>
-          </div>
-          <div className="markedArea">
-            <div className="markdInst"><textarea>{markedownInstructionsOne}</textarea></div>
-            <div className="markdInst"><textarea>{markedownInstructionsTwo}</textarea></div>
+          <div className="markedGroup">
+            <div className="markedHeading">
+              <h4>You may use markdown to format your post:</h4>
+            </div>
+            <div className="markedArea">
+              <div className="markdInst"><textarea>{markedownInstructionsOne}</textarea></div>
+              <div className="markdInst"><textarea>{markedownInstructionsTwo}</textarea></div>
+            </div>
           </div>
         </div>
       )  

@@ -692,12 +692,17 @@ li {
 }
 
 .topicalPostsList {
-  padding: 0px 5px;
+  padding: 10px 10px 0px 10px;
+}
+
+.topicalPostAddGroup {
+  padding: 0px 10px 10px 10px;
+  box-sizing: border-box;
 }
 
 .subTopicHeader {
   background-color: chocolate;
-  margin: 10px 5px 0px 5px;
+  margin: 0px 0px 0px 0px;
   padding: 5px;
 }
 
@@ -734,6 +739,7 @@ li {
 }
 
 .topicalPostLink {
+  background-color: cornsilk;
   padding: 5px;
   border: 1px solid darkred;
   border-top: none;
@@ -750,7 +756,9 @@ li {
 }
 
 .topicalPostAdd {
+  background-color: cornsilk;
   padding: 10px;
+  box-sizing: border-box;
 }
 
 .topicalPostAdd span, textarea, input {
@@ -775,7 +783,7 @@ li {
 
 .threadHeader {
   background-color: chocolate;
-  margin: 0px 10px;
+  margin: 0px;
 }
 
 .threadHeader h1 {
@@ -784,8 +792,9 @@ li {
 }
 .mainPost {
   display: flex;
+  background-color: cornsilk;
   border: 1px solid darkred;
-  margin: 0px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
 }
 
 .postOwnerInfo {
@@ -821,12 +830,17 @@ li {
 }
 
 .replyBody {
+  box-sizing: border-box;
   width: 100%;
   height: 50px;
 }
 
 .replyPost {
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
+}
+
+.replyPost form {
+  background-color: cornsilk;
 }
 
 .replyPostDetails {
@@ -845,13 +859,14 @@ li {
 }
 
 .repliesList {
-  padding: 0px 10px 10px 30px;
+  padding: 0px 10px 0px 30px;
 }
 
 .replyGroup {
   display: flex;
   border: 1px solid darkred;
   margin: 10px 0;
+  background-color: cornsilk;
 }
 
 .replyPostBody {
@@ -870,11 +885,22 @@ li {
   margin: 0px 10px;
 }
 
+.markedGroup {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 10px 10px 10px;
+  margin-bottom: 10px;
+}
 .markedArea {
   width: 100%;
+  background-color: cornsilk;
+  padding: 10px 0px;
 }
 
 .markedHeading {
+  background-color: cornsilk;
+  margin: 10px 0px 0px 0px; 
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -1044,6 +1070,9 @@ li {
 }
 
 .blogMainHeader {
+  text-align: center;
+  background-color: chocolate;
+  height: fit-content;
   margin: 0;
   padding: 0;
   display: flex;
@@ -1052,11 +1081,13 @@ li {
 }
 
 .blogMainHeader h1 {
-  font-size: 32px;
-  margin: 5px auto;
+  width: 100%;
+  font-family: fantasy;
+  padding: 8px;
 }
 
 .blogCreateLink {
+  font-size: 14px;
   margin: 0 auto;
   text-decoration: none;
   color: white;
@@ -1064,6 +1095,7 @@ li {
   border-radius: 5px;
   background-color: blue;
   padding: 3px;
+  margin-bottom: 10px;
 }
 
 .blogAndForum {
@@ -1084,17 +1116,21 @@ li {
 
 .blogHeader {
   text-align: center;
+  background-color: chocolate;
+  margin-bottom: 10px;
+  height: fit-content;
 }
 
 .blogTitle {
+  margin: 10px 0px;
+  font-family: fantasy;
   font-size: 32px;
-  padding: 5px 0px;
 }
 
 .blogItem {
   width: 100%;
   padding-bottom: 10px;
-  margin: 10px;
+  margin: 0px 10px;
 }
 
 .blogItemHeader {
@@ -1165,6 +1201,7 @@ li {
 
 .blogBodyGroup {
   border: 1px solid darkred;
+  background-color: cornsilk;
   padding: 10px;  
 }
 
@@ -1280,10 +1317,12 @@ li {
 }
 
 .commentBlock {
+  background-color: cornsilk;
   margin-top: 0px;
 }
 
 .commentBlockTitle {
+  background-color: cornsilk;
   margin: 20px 0px 0px 0px;
 }
 
@@ -1328,6 +1367,7 @@ li {
 
 .addCommentBlock {
   border: 1px solid darkred;
+  background-color: cornsilk;
   padding: 10px 15px 10px 10px;
   margin-top: 20px;
 }
@@ -1764,6 +1804,15 @@ li {
   .gameDetailsHeader {
     font-size: 28px;
   }
+
+  .blogMainHeader {
+    font-size: 28px;
+  }
+  
+  .blogMainHeader h1 {
+    margin-bottom: 0;
+  }
+
 
   .gameDetailsContent {
     display: flex;

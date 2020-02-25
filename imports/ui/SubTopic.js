@@ -69,7 +69,7 @@ class SubTopic extends Component {
               return <PostLink key={post._id} post={post}/>
             })}
           </div>
-          <div>
+          <div className="topicalPostAddGroup">
             <form className="topicalPostAdd" onSubmit={this.handleSubmitPost.bind(this)} >
               <span>Post your response:</span>
               <input className="topicalPostAddTitle" id="postTitle" type="text" ref={input => (this.postTitle = input)} defaultValue="title" />
@@ -77,12 +77,14 @@ class SubTopic extends Component {
               <input type="submit" value="submit" />
             </form>
           </div>
-          <div className="markedHeading">
-            <h4>You may use markdown to format your post:</h4>
-          </div>
-          <div className="markedArea">
-            <div className="markdInst"><textarea defaultValue={markedownInstructionsOne} readOnly></textarea></div>
-            <div className="markdInst"><textarea defaultValue={markedownInstructionsTwo} readOnly></textarea></div>
+          <div className="markedGroup">
+            <div className="markedHeading">
+              <h4>You may use markdown to format your post:</h4>
+            </div>
+            <div className="markedArea">
+              <div className="markdInst"><textarea defaultValue={markedownInstructionsOne} readOnly></textarea></div>
+              <div className="markdInst"><textarea defaultValue={markedownInstructionsTwo} readOnly></textarea></div>
+            </div>
           </div>
         </div>
       )  
