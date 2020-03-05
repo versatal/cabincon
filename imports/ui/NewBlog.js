@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import Comment from './Comment.js';
 import BlogArchive from './BlogArchive.js';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 class Blog extends Component {
 
@@ -50,19 +51,21 @@ class Blog extends Component {
     const { blog, currentUser  } = this.props;
 
     let blogIdString = "";
-    if (blog) {blogIdString = "/editblog:" + blog._id;}
+    if (blog) {blogIdString = "/editblog:" + blog._id;console.log(blog.createdAt);}
+
+    
     
     if (blog) {
       return (
         <div className="container">
-          <div className="blogHeader">
-            <h1 className="blogTitle">{blog.title}</h1>
+          <div className="mainHeader">
+            <h1>{blog.title}</h1>
           </div>
           <div className="blogContainer">
             <div className="blogItem">
               <div className="blogItemHeader">
                 {blog.ownerId == currentUser._id && <button onClick={this.deleteThisBlog.bind(this)}>X</button>}
-                <span>Posted on: {blog.createdAt.toString()}</span>
+                <span>Posted on: {moment(blog.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                 {blog.ownerId == currentUser._id && <Link className="blogEditLink" to={blogIdString}>Edit</Link>}                          
               </div>
               <div className="blogBodyGroup">
@@ -70,9 +73,11 @@ class Blog extends Component {
                 <div className="blogBody" dangerouslySetInnerHTML={{__html: marked(blog.body)}}></div>
                 <span>posted by: {Meteor.users.findOne(blog.ownerId) ? Meteor.users.findOne(blog.ownerId).username : "unknown"}</span>          
               </div>
-              <h3 className="commentBlockTitle">Comments:</h3>
               <div className="commentBlock">
-                {this.renderComments()}
+                <h3 className="commentBlockTitle">Comments:</h3>
+                <div className="commentBlockBody">
+                  {this.renderComments()}
+                </div>
               </div>
               <div className="addCommentBlock">
                 <form onSubmit={this.handleSubmit.bind(this)}>

@@ -20,8 +20,7 @@ const StyledDateHeader = styled.div`
   grid-column: 1 / span 6;
   background-color: chocolate;
   height: 40px;
-  text-align: center;
-  padding: 0px;
+  padding: 0px 5px 0px 0px;
   margin: 10px 0px 0px 0px;
   display: flex;
   padding-left: 3%;

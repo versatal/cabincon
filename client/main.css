@@ -16,6 +16,12 @@ body {
   font-size: 14px;
 }
 
+h1, h3 {
+  margin: 0;
+  padding: 0;
+  font-size: unset;
+}
+
 .hero-image {
   position: fixed;
   top: 0;
@@ -69,7 +75,8 @@ body {
 
 .navBarLeft h1 {
   margin: auto 0;
-  height: 100%
+  height: 100%;
+  font-size: 24px;
 }
 
 .hamburgerMenu {
@@ -229,12 +236,6 @@ body {
   text-align: left;
 }
 
-.gameDayHeader {
-  font-size: 32px;
-  margin: auto 0;
-  text-align: center;
-}
-
 .gameLabel {
   font-weight: bold;
   font-size: 18px;
@@ -344,14 +345,6 @@ footer {
   position: relative;
 }
  
-h1 {
-  font-size: 1.5em;
-  margin: 0;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-right: 1em;
-}
-
 .slotAdd {
   display: flex;
 }
@@ -446,6 +439,7 @@ ul {
   text-align: center;
   font-size: .9em;
   display: flex;
+  margin: 7px auto;
 }
 
 .gameLink {
@@ -504,16 +498,28 @@ ul {
   background-color: cornsilk;
 }
 
-.gameDetailsHeader {
+.mainHeader, .blogMainHeader {
   background-color: chocolate;
   height: fit-content;
   text-align: center;
   font-family: fantasy;
 }
 
-.gameDetailsHeader h1 {
+.mainHeader h1, .blogMainHeader h1 {
   margin: 0;
-  padding: 8px
+  padding: 8px;
+  font-size: 2em;
+}
+
+.blogMainHeader {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.blogMainHeader h1 {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gameDetailsContent {
@@ -601,18 +607,9 @@ li {
   color: darkred;
 }
 
-.forumHeader {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.forumHeader h1 {
-  font-size: 32px;
-}
-
 .topicGroup {
   margin: 0px 0px 20px 0px;
-  padding: 5px 10px;
+  padding: 5px 0px;
   box-sizing: border-box;
 }
 
@@ -620,6 +617,7 @@ li {
   border: 1px solid black;
   background-color: chocolate;
   display: flex;
+  padding: 4px 0px;
 }
 .forumTopicId {
   display: flex;
@@ -629,20 +627,17 @@ li {
 .forumTopicId h1 {
   color: black;
   height: auto;
+  font-size: 18px;
+  margin: auto 10px;
 }
 
 .topicEditLink, .topicDelete {
   border: 1px solid black;
-  height: auto;
-}
-
-.forumTopicId h1 {
-  font-size: 28px;
-  margin: auto 10px;
+  height: fit-content;
 }
 
 .topicEditLink {
-  padding: 8px;
+  padding: 6px;
   text-decoration: none;
   border-radius: 10px;
   text-transform: uppercase;
@@ -665,7 +660,7 @@ li {
   width: 10%;
   margin: auto;
   text-align: center;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -673,13 +668,12 @@ li {
   width: 15%;
   margin: auto;
   text-align: center;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
 }
 
 .forumTopicList {
   padding-bottom: 10px;
-  background-color: cornsilk;
 }
 
 .forumAdmin {
@@ -736,6 +730,7 @@ li {
 .subTopicLatest {
   text-align: center;
   width: 15%;
+  margin-top: 8px;
 }
 
 .topicalPostLink {
@@ -841,6 +836,7 @@ li {
 
 .replyPost form {
   background-color: cornsilk;
+  padding: 10px;
 }
 
 .replyPostDetails {
@@ -1069,23 +1065,6 @@ li {
   margin-left: 15px;
 }
 
-.blogMainHeader {
-  text-align: center;
-  background-color: chocolate;
-  height: fit-content;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.blogMainHeader h1 {
-  width: 100%;
-  font-family: fantasy;
-  padding: 8px;
-}
-
 .blogCreateLink {
   font-size: 14px;
   margin: 0 auto;
@@ -1112,19 +1091,7 @@ li {
 
 .blogContainer {
   display: flex;
-}
-
-.blogHeader {
-  text-align: center;
-  background-color: chocolate;
-  margin-bottom: 10px;
-  height: fit-content;
-}
-
-.blogTitle {
-  margin: 10px 0px;
-  font-family: fantasy;
-  font-size: 32px;
+  margin-top: 10px;
 }
 
 .blogItem {
@@ -1205,7 +1172,13 @@ li {
   padding: 10px;  
 }
 
+.blogBodyGroup h4 {
+  font-size: 20px;
+}
+
 .blogBody {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   padding: 0px 10px;
 }
 
@@ -1317,13 +1290,23 @@ li {
 }
 
 .commentBlock {
+  width: 100%;
+}
+
+.commentBlockBody {
   background-color: cornsilk;
   margin-top: 0px;
 }
 
 .commentBlockTitle {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid darkred;
+  border-bottom: none;
   background-color: cornsilk;
   margin: 20px 0px 0px 0px;
+  padding: 5px 10px;
 }
 
 .commentItem {
@@ -1801,11 +1784,7 @@ li {
     display: none;
   }
 
-  .gameDetailsHeader {
-    font-size: 28px;
-  }
-
-  .blogMainHeader {
+  .mainHeader, .blogMainHeader {
     font-size: 28px;
   }
   
@@ -1829,6 +1808,18 @@ li {
 
   .gameResources {
     width: 49%;
+  }
+
+  .forumTopicId h1 {
+    font-size: 28px;
+  }
+
+  .topicDelete, .topicEditLink {
+    margin-top: 3px;
+  }
+
+  .forumTopicPosts, .forumTopicLatest {
+    font-size: 18px;
   }
 }
 
@@ -1885,7 +1876,7 @@ li {
 
   .navBarLeft h1 {
     height: auto;
-    font-size: 2.5em;
+    font-size: 42px;
   }
 
   .menu {

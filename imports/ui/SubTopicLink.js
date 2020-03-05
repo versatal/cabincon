@@ -36,7 +36,7 @@ class SubTopicLink extends Component {
             </div>
           </div>
           <span className="subTopicPosts">{this.numberOfRelatedPosts(post._id)}</span>
-          {this.numberOfRelatedPosts(post._id) > 0 ? <span className="subTopicLatest">{this.latestPostOwner(post._id)}</span> : <span className="subTopicLatest">No Posts Yet</span>}        
+          {this.numberOfRelatedPosts(post._id) > 0 ? <span className="subTopicLatest">{this.latestPostOwner(post._id)}</span> : <span className="subTopicLatest">None</span>}        
         </div>
       );
     } else {

@@ -87,8 +87,8 @@ class GameDetails extends Component {
     if (game) {
       return (
         <div className="container">
-          <div className="gameDetailsHeader" >
-            <h1>Game Details - {game.title}</h1>
+          <div className="mainHeader" >
+            <h1>{game.title}</h1>
           </div>
           <div className="gameDetailsContent">
             <form className="gameDetailsContentForm" onSubmit={this.handleSubmit.bind(this)}>

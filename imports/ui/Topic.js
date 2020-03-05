@@ -27,7 +27,7 @@ class Topic extends Component {
             <span>Posts</span>
           </div>
           <div className="forumTopicLatest">
-            <span>Latest Post</span>
+            <span>Latest</span>
           </div>
         </div>
       );

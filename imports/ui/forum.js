@@ -76,7 +76,7 @@ class Forum extends Component {
     const { currentUser } = this.props;
     return (
       <div className="container">
-        <div className="forumHeader">
+        <div className="mainHeader">
           <h1>BiggusGeekus Forum</h1>
         </div>
         <div className="forumTopicList">
