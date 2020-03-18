@@ -377,6 +377,13 @@ form {
   margin: 0 auto;
   margin-top: 45%;
 }
+
+.signInMessage h1{
+  height: 28px;
+  background-color: chocolate;
+  font-size: 20px;
+  padding-top: 6px;
+}
  
 .new-game input {
   box-sizing: border-box;
@@ -1514,25 +1521,27 @@ li {
 }
 
 .profileHeader {
-  width: 100%;
+  background-color: chocolate;
+  margin: 0;
+  height: 40px;
+  text-align: center;
 }
 
 .profileHeader h1{
-  width: 100%;
-  font-size: 24px;
-  margin: 0 auto;
-  text-align: center;
+  font-size: 32px;
+  padding: 8px;
 }
 
 .profileContent {
   width: 100%;
-  padding: 0 10px;
+  padding: 0 10px 10px 10px;
   box-sizing: border-box;
   margin-top: 20px;
 }
 
 .userInfo {
   width: 100%;
+  background-color: cornsilk;
   border: 1px solid darkred;
   box-sizing: border-box;
   display: flex;
@@ -1679,7 +1688,9 @@ li {
 .userGames {
   width: 100%;
   height: 30%;
+  background-color: cornsilk;
   border: 1px solid darkred;
+  box-sizing: border-box;
 }
 
 .userGames h1{
@@ -1693,7 +1704,9 @@ li {
 .userPosts {
   width: 100%;
   height: 70%;
+  background-color: cornsilk;
   border: 1px solid darkred;
+  box-sizing: border-box;
 }
 
 .userPosts h1{
@@ -1765,6 +1778,11 @@ li {
 
   .signInMessage {
     margin-top: 20%;
+  }
+
+  .signInMessage h1 {
+    height: 40px;
+    font-size: 32px;
   }
 
   .mainMenuItem:hover {

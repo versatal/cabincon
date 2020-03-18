@@ -35,7 +35,7 @@ class Profile extends Component {
       return (
         <div className="container">
           <Modal onClose={this.showModal} show={this.state.show}>Change Your Password</Modal>
-          <div className="profileHeader">
+          <div className="mainHeader">
             <h1>Profile for {currentUser.username}</h1>
           </div>
           <div className="profileContent">
