@@ -5,7 +5,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        deadline: '15 April, 2020', 
+        deadline: '14 May, 2020', 
         days: 0,
         hours: 0,
         minutes: 0,
