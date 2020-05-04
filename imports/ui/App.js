@@ -5,7 +5,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        deadline: '14 May, 2020', 
+        deadline: '11 June, 2020', 
         days: 0,
         hours: 0,
         minutes: 0,
@@ -47,7 +47,7 @@ getTimeUntil(deadline) {
       <div>
         <img className="hero-image" src="https://theplaylist.net/wp-content/uploads/2016/05/5-things-you-might-not-know-about-star-trek-ii-wrath-of-khan-30th-anniversary-1200x520.png" />
         <div className="Clock">
-          <div className="Clock-title">Countdown to Cabin Con.  May 14 thru May 17 2020</div>
+          <div className="Clock-title">Countdown to Cabin Con.  June 11 thru June 14 2020</div>
           <div className="Clock-face">
             <div className="Clock-days">{this.leading0(this.state.days)} Days</div>
             <div className="Clock-hours">{this.leading0(this.state.hours)} Hours</div>
