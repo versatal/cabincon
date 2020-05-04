@@ -111,7 +111,7 @@ class Schedule extends Component {
             <div className="overlay">
               <div className="overlayContent">
                 <span className="lineOne">CabinCon 2020</span>
-                <span className="lineTwo">June 11 - May 14</span>
+                <span className="lineTwo">June 11 - June 14</span>
                 <span className="lineThree">Truely The Best 4 Days In Gaming</span>
               </div>
             </div>
